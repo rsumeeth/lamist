@@ -1,5 +1,10 @@
 ---
-import { contactDetails, services } from '../data/siteContent';
+import {
+  contactDetails,
+  doctorOptions,
+  departmentOptions,
+  timeSlotOptions,
+} from '../data/siteContent';
 ---
 
 <section class="contact" id="contact" aria-labelledby="contact-heading">
@@ -45,39 +50,88 @@ import { contactDetails, services } from '../data/siteContent';
             </div>
           </div>
         </div>
+
       </aside>
 
       <div class="contact-form-wrapper reveal" id="contact-form">
-        <h3 class="contact-form-title">Book a Consultation</h3>
-        <form class="contact-form">
+        <h3 class="contact-form-title">Book Your Consultation</h3>
+        <p class="contact-form-subtitle">Fill in your details and our team responds within 2 hours.</p>
+
+        <form class="contact-form" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Full Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
+              <label for="fullName">Full Name <span>*</span></label>
+              <input id="fullName" name="fullName" type="text" placeholder="Enter your name" required data-required="true" />
+              <p class="field-error" id="fullName-error"></p>
             </div>
             <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input id="phone" name="phone" type="tel" placeholder="Your phone" required />
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="Enter email" />
+              <p class="field-error" id="email-error"></p>
             </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input id="email" name="email" type="email" placeholder="Your email" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone <span>*</span></label>
+              <input id="phone" name="phone" type="tel" placeholder="Phone number" required data-required="true" inputmode="tel" />
+              <p class="field-error" id="phone-error"></p>
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input id="age" name="age" type="number" placeholder="Age" min="18" max="60" />
+              <p class="field-error" id="age-error"></p>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="service">Select Service</label>
-            <select id="service" name="service">
-              <option value="">Choose a service</option>
-              {services.map((service) => (
-                <option value={service.id}>{service.title}</option>
-              ))}
-            </select>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="doctor">Select Doctor</label>
+              <select id="doctor" name="doctor">
+                {doctorOptions.map((item) => (
+                  <option value={item.value}>{item.label}</option>
+                ))}
+              </select>
+              <p class="field-error" id="doctor-error"></p>
+            </div>
+            <div class="form-group">
+              <label for="department">Department <span>*</span></label>
+              <select id="department" name="department" required data-required="true">
+                {departmentOptions.map((item) => (
+                  <option value={item.value}>{item.label}</option>
+                ))}
+              </select>
+              <p class="field-error" id="department-error"></p>
+            </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="preferredDate">Preferred Date</label>
+              <input id="preferredDate" name="preferredDate" type="date" />
+              <p class="field-error" id="preferredDate-error"></p>
+            </div>
+            <div class="form-group">
+              <label for="preferredTime">Preferred Time</label>
+              <select id="preferredTime" name="preferredTime">
+                {timeSlotOptions.map((item) => (
+                  <option value={item.value}>{item.label}</option>
+                ))}
+              </select>
+              <p class="field-error" id="preferredTime-error"></p>
+            </div>
+          </div>
+
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us about your concerns..."></textarea>
+            <textarea id="message" name="message" placeholder="Any specific concerns or previous history..."></textarea>
+            <p class="field-error" id="message-error"></p>
           </div>
-          <button class="form-submit" type="submit">Request Appointment</button>
+
+          <button class="form-submit" type="submit">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            Request Appointment
+          </button>
         </form>
       </div>
     </div>
@@ -86,8 +140,8 @@ import { contactDetails, services } from '../data/siteContent';
 
 <style>
   .contact {
-    padding: var(--section-pad);
-    background: linear-gradient(180deg, var(--cream) 0%, var(--champagne-light) 100%);
+    padding: clamp(58px, 8vw, 96px) clamp(18px, 4.4vw, 54px);
+    background: linear-gradient(180deg, #fffdf9 0%, #fff5ef 100%);
   }
 
   .contact-inner {
@@ -97,8 +151,8 @@ import { contactDetails, services } from '../data/siteContent';
 
   .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: clamp(30px, 5vw, 70px);
+    grid-template-columns: 0.95fr 1.2fr;
+    gap: clamp(22px, 4vw, 48px);
   }
 
   .contact-info h3 {
@@ -113,14 +167,15 @@ import { contactDetails, services } from '../data/siteContent';
   .contact-info > p {
     color: var(--charcoal);
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     max-width: 560px;
   }
 
   .contact-details {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 12px;
+    margin-bottom: 20px;
   }
 
   .contact-item {
@@ -143,8 +198,8 @@ import { contactDetails, services } from '../data/siteContent';
 
   .contact-item h4 {
     color: var(--midnight);
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.82rem;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
     margin-bottom: 4px;
   }
@@ -156,18 +211,24 @@ import { contactDetails, services } from '../data/siteContent';
   }
 
   .contact-form-wrapper {
-    background: white;
-    border-radius: 24px;
-    padding: clamp(24px, 3vw, 36px);
-    box-shadow: var(--shadow-soft);
+    background: #fffeff;
+    border-radius: 22px;
+    padding: clamp(20px, 2.5vw, 30px);
+    box-shadow: 0 14px 28px rgba(31, 24, 38, 0.09);
   }
 
   .contact-form-title {
     font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 300;
-    margin-bottom: 20px;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 500;
+    margin-bottom: 6px;
     color: var(--midnight);
+    line-height: 1.1;
+  }
+
+  .contact-form-subtitle {
+    color: #64748b;
+    margin-bottom: 16px;
   }
 
   .form-row {
@@ -177,7 +238,7 @@ import { contactDetails, services } from '../data/siteContent';
   }
 
   .form-group {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   .form-group label {
@@ -185,8 +246,13 @@ import { contactDetails, services } from '../data/siteContent';
     font-size: 0.8rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--charcoal);
+    color: #5d6678;
     margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .form-group label span {
+    color: var(--hot-pink);
   }
 
   .form-group input,
@@ -194,10 +260,10 @@ import { contactDetails, services } from '../data/siteContent';
   .form-group textarea {
     width: 100%;
     padding: 14px 16px;
-    border: 1px solid var(--champagne);
-    border-radius: 12px;
+    border: 1px solid #d3d6dc;
+    border-radius: 14px;
     font-family: var(--font-body);
-    background: var(--cream);
+    background: #f6f7f9;
     color: var(--midnight);
   }
 
@@ -210,24 +276,35 @@ import { contactDetails, services } from '../data/siteContent';
   .form-group select:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: var(--rose-gold);
-    box-shadow: 0 0 0 3px rgba(232, 76, 138, 0.12);
+    border-color: var(--hot-pink);
+    box-shadow: 0 0 0 3px rgba(217, 22, 159, 0.15);
+  }
+
+  .field-error {
+    min-height: 16px;
+    font-size: 0.78rem;
+    color: #c01771;
+    margin-top: 6px;
   }
 
   .form-submit {
     width: 100%;
     border: 0;
-    border-radius: 12px;
-    padding: 16px;
-    background: var(--midnight);
+    border-radius: 999px;
+    padding: 14px;
+    background: linear-gradient(92deg, var(--hot-orange) 0%, var(--hot-pink) 100%);
     color: white;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-transform: none;
     cursor: pointer;
-  }
-
-  .form-submit:hover {
-    background: var(--rose-gold);
+    font-family: var(--font-display);
+    font-size: 1.18rem;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
   }
 
   @media (max-width: 900px) {
@@ -240,5 +317,64 @@ import { contactDetails, services } from '../data/siteContent';
     .form-row {
       grid-template-columns: 1fr;
     }
+
+    .contact-form-wrapper {
+      border-radius: 16px;
+    }
   }
 </style>
+
+<script>
+  const forms = document.querySelectorAll('.contact-form');
+
+  const validators = {
+    fullName: (value) => (value.trim().length < 2 ? 'Please enter your full name.' : ''),
+    phone: (value) => (!/^\d{10}$/.test(value.replace(/\D/g, '')) ? 'Enter a valid 10-digit phone number.' : ''),
+    email: (value) => {
+      if (!value.trim()) return '';
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? '' : 'Enter a valid email address.';
+    },
+    department: (value) => (!value ? 'Please select a department.' : ''),
+  };
+
+  const setError = (form, fieldName, message) => {
+    const input = form.querySelector(`[name="${fieldName}"]`);
+    const errorNode = form.querySelector(`#${fieldName}-error`);
+    if (!input || !errorNode) return;
+
+    input.setAttribute('aria-invalid', message ? 'true' : 'false');
+    errorNode.textContent = message;
+  };
+
+  const validateField = (form, fieldName) => {
+    const input = form.querySelector(`[name="${fieldName}"]`);
+    if (!input) return '';
+    const fn = validators[fieldName];
+    const message = fn ? fn(input.value) : '';
+    setError(form, fieldName, message);
+    return message;
+  };
+
+  forms.forEach((form) => {
+    const fields = ['fullName', 'phone', 'email', 'department'];
+
+    fields.forEach((field) => {
+      const input = form.querySelector(`[name="${field}"]`);
+      input?.addEventListener('blur', () => validateField(form, field));
+      input?.addEventListener('input', () => validateField(form, field));
+    });
+
+    form.addEventListener('submit', (event) => {
+      let hasError = false;
+      fields.forEach((field) => {
+        if (validateField(form, field)) hasError = true;
+      });
+
+      if (hasError) {
+        event.preventDefault();
+        const firstInvalid = form.querySelector('[aria-invalid="true"]');
+        firstInvalid?.focus();
+      }
+    });
+  });
+</script>

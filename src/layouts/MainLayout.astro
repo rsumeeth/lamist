@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
+import ConversionAssist from '../components/ConversionAssist.astro';
 
 export interface Props {
   title?: string;
@@ -94,6 +95,7 @@ const localBusinessSchema = {
 </head>
 <body>
   <slot />
+  <ConversionAssist />
   <Footer />
 
   <!-- Global scroll reveal -->

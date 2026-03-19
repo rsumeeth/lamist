@@ -1,0 +1,139 @@
+---
+import { whatsappLink } from '../data/siteContent';
+---
+
+<div class="floating-assist" aria-label="Quick contact actions">
+  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span>WhatsApp</span>
+  </a>
+</div>
+
+<div class="mobile-fab" id="mobile-fab">
+  <div class="mobile-fab-menu" id="mobile-fab-menu" aria-hidden="true">
+    <a class="fab-action fab-wa" href={whatsappLink} target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      WhatsApp
+    </a>
+    <a class="fab-action fab-book" href="/contact#contact-form">
+      <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+      Book Consultation
+    </a>
+  </div>
+
+  <button class="fab-toggle" id="fab-toggle" aria-label="Open quick actions" aria-expanded="false" aria-controls="mobile-fab-menu" type="button">
+    <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+  </button>
+</div>
+
+<style>
+  .floating-assist {
+    position: fixed;
+    right: 18px;
+    bottom: 22px;
+    z-index: 950;
+  }
+
+  .wa-float {
+    height: 50px;
+    min-width: 50px;
+    padding: 0 16px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 600;
+    background: linear-gradient(90deg, #1bbf62 0%, #0f9f4f 100%);
+    box-shadow: 0 12px 24px rgba(16, 152, 76, 0.32);
+    transition: transform 0.25s ease;
+  }
+
+  .wa-float i { font-size: 1.2rem; }
+  .wa-float span { font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .wa-float:hover { transform: translateY(-2px); }
+
+  .mobile-fab {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    z-index: 960;
+    display: none;
+  }
+
+  .fab-toggle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 0;
+    background: linear-gradient(92deg, var(--hot-orange) 0%, var(--hot-pink) 100%);
+    color: #fff;
+    box-shadow: 0 14px 24px rgba(32, 16, 40, 0.28);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .fab-toggle i { font-size: 1.2rem; }
+
+  .mobile-fab-menu {
+    position: absolute;
+    right: 0;
+    bottom: 64px;
+    display: grid;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobile-fab.open .mobile-fab-menu {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+  }
+
+  .fab-action {
+    min-width: 188px;
+    height: 42px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(18, 18, 40, 0.24);
+    white-space: nowrap;
+  }
+
+  .fab-wa { background: linear-gradient(90deg, #1bbf62 0%, #0f9f4f 100%); }
+  .fab-book { background: linear-gradient(92deg, var(--hot-orange) 0%, var(--hot-pink) 100%); }
+
+  @media (max-width: 900px) {
+    .floating-assist { display: none; }
+    .mobile-fab { display: block; }
+  }
+</style>
+
+<script>
+  const fabRoot = document.getElementById('mobile-fab');
+  const fabToggle = document.getElementById('fab-toggle');
+
+  fabToggle?.addEventListener('click', () => {
+    const isOpen = fabRoot?.classList.toggle('open');
+    fabToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!fabRoot?.contains(event.target)) {
+      fabRoot?.classList.remove('open');
+      fabToggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

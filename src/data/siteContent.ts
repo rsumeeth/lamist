@@ -11,6 +11,31 @@ export type FaqItem = {
   answer: string;
 };
 
+export type SelectOption = {
+  value: string;
+  label: string;
+};
+
+export type HeroStatItem = {
+  value: string;
+  label: string;
+};
+
+export type HeroPillItem = {
+  id: string;
+  icon: string;
+  label: string;
+  value: string;
+};
+
+export type ReviewItem = {
+  id: string;
+  quote: string;
+  name: string;
+  city: string;
+  rating: 5;
+};
+
 export const services: ServiceItem[] = [
   {
     id: 'ivf',
@@ -79,12 +104,116 @@ export const faqs: FaqItem[] = [
   },
 ];
 
+export const heroStats: HeroStatItem[] = [
+  { value: '20+', label: 'Years of Care' },
+  { value: '2,400+', label: 'Miracles Born' },
+  { value: '5.0 ♥', label: 'Patient Love Score' },
+  { value: '24/7', label: 'Care Support' },
+];
+
+export const heroPills: HeroPillItem[] = [
+  {
+    id: 'success-rate',
+    icon: '🌸',
+    label: 'Success Rate',
+    value: '94% IVF Outcomes',
+  },
+  {
+    id: 'wellness',
+    icon: '🫶',
+    label: 'Dedicated to',
+    value: "Women's Wellness",
+  },
+  {
+    id: 'care-support',
+    icon: '✨',
+    label: 'Experience',
+    value: '24/7 Care Support',
+  },
+];
+
+export const heroQuote = "A sanctuary where science meets the warmth of a mother's dream.";
+
+export const reviews: ReviewItem[] = [
+  {
+    id: 'deenkumar',
+    quote:
+      'I had a wonderful experience and got positive results. The entire team was professional, kind, and supportive. Every step was explained clearly, and I always felt confident and cared for.',
+    name: 'Deenkumar',
+    city: 'Madurai',
+    rating: 5,
+  },
+  {
+    id: 'princiya',
+    quote:
+      'The doctors and nursing team treated us like family. The care, warmth, and attention throughout the process made a huge difference for us.',
+    name: 'Princiya A.',
+    city: 'Madurai',
+    rating: 5,
+  },
+  {
+    id: 'sunita',
+    quote:
+      'The doctors were transparent about costs and gave realistic expectations. We felt supported from consultation to delivery and welcomed our daughter safely.',
+    name: 'Sunita K.',
+    city: 'Hyderabad',
+    rating: 5,
+  },
+  {
+    id: 'ananya',
+    quote:
+      'I had PCOS and was struggling to conceive. The team first recommended ovulation induction and then IUI. The conservative approach was right for me and it worked.',
+    name: 'Ananya B.',
+    city: 'Mumbai',
+    rating: 5,
+  },
+  {
+    id: 'priya',
+    quote:
+      'After years of trying, we found hope again. The doctors were compassionate, explained every stage, and we welcomed our baby after our IVF cycle.',
+    name: 'Priya M.',
+    city: 'Chennai',
+    rating: 5,
+  },
+];
+
 export const contactDetails = {
   phone: '+91 98000 00000',
   email: 'care@lamnist.com',
   location: 'East Delhi, India',
   hours: 'Mon - Sat: 9:00 AM - 7:00 PM',
 };
+
+export const doctorOptions: SelectOption[] = [
+  { value: '', label: 'Choose Doctor' },
+  { value: 'dr-priya-sharma', label: 'Dr. Priya Sharma' },
+  { value: 'dr-neha-mehra', label: 'Dr. Neha Mehra' },
+  { value: 'dr-anuj-verma', label: 'Dr. Anuj Verma' },
+];
+
+export const departmentOptions: SelectOption[] = [
+  { value: '', label: 'Choose Department' },
+  { value: 'ivf', label: 'IVF & ART' },
+  { value: 'iui', label: 'IUI & Fertility Support' },
+  { value: 'fertility-testing', label: 'Fertility Testing' },
+  { value: 'gynecology', label: 'Gynecology' },
+  { value: 'high-risk-pregnancy', label: 'High-Risk Pregnancy' },
+];
+
+export const timeSlotOptions: SelectOption[] = [
+  { value: '', label: 'Select Time' },
+  { value: '09:00', label: '09:00 AM' },
+  { value: '10:30', label: '10:30 AM' },
+  { value: '12:00', label: '12:00 PM' },
+  { value: '14:00', label: '02:00 PM' },
+  { value: '16:00', label: '04:00 PM' },
+  { value: '18:00', label: '06:00 PM' },
+];
+
+const whatsappMessage =
+  'Hi LAMNIST, I want to book a fertility consultation. Source: website_hero_utm.';
+
+export const whatsappLink = `https://wa.me/919800000000?text=${encodeURIComponent(whatsappMessage)}`;
 
 export const footerColumns = {
   quickLinks: [
