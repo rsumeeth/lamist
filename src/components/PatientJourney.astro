@@ -1,0 +1,200 @@
+---
+// PatientJourney.astro — 4-step IVF process, high-conversion
+const steps = [
+  {
+    num: '01',
+    icon: 'fa-comments',
+    title: 'Initial Consultation',
+    desc: 'A warm, private consultation to understand your history, concerns, and fertility goals. No judgment — just care.',
+  },
+  {
+    num: '02',
+    icon: 'fa-flask',
+    title: 'Diagnosis & Testing',
+    desc: 'Comprehensive blood work, ultrasounds, semen analysis, and hormonal profiling to precisely identify the cause.',
+  },
+  {
+    num: '03',
+    icon: 'fa-file-medical',
+    title: 'Personalized Treatment',
+    desc: 'A custom IVF or fertility protocol designed specifically for your body — not a one-size-fits-all approach.',
+  },
+  {
+    num: '04',
+    icon: 'fa-baby-carriage',
+    title: 'Pregnancy Success',
+    desc: 'Continued support through your pregnancy journey — from embryo transfer to delivery, we celebrate with you.',
+  },
+];
+---
+
+<section class="journey" id="journey" aria-labelledby="journey-heading">
+  <div class="journey-inner">
+    <header class="section-header reveal">
+      <span class="section-tag">Your Path to Parenthood</span>
+      <h2 class="section-title" id="journey-heading">
+        Simple. <em>Guided.</em> Supported.
+      </h2>
+      <p class="section-subtitle">
+        Every IVF journey at LAMNIST follows 4 clear steps — so you always know where you are and what comes next.
+      </p>
+    </header>
+
+    <div class="journey-steps">
+      {steps.map((step, i) => (
+        <div class="journey-step reveal" style={`animation-delay: ${i * 0.1}s`}>
+          <div class="step-num" aria-hidden="true">{step.num}</div>
+          <div class="step-icon" aria-hidden="true">
+            <i class={`fa-solid ${step.icon}`}></i>
+          </div>
+          <h3>{step.title}</h3>
+          <p>{step.desc}</p>
+          {i < steps.length - 1 && (
+            <div class="step-arrow" aria-hidden="true">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="journey-cta reveal">
+      <a href="/contact#contact-form" class="btn-rose journey-btn">
+        <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+        Start Your Journey — Book Free Consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .journey {
+    padding: var(--section-pad);
+    background: var(--cream);
+  }
+
+  .journey-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .journey-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    position: relative;
+  }
+
+  .journey-step {
+    position: relative;
+    background: white;
+    border-radius: 28px;
+    padding: clamp(28px, 3vw, 44px) clamp(22px, 2.5vw, 32px);
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .journey-step:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--champagne);
+    line-height: 1;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+  }
+
+  .step-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--rose-gold) 0%, var(--rose-gold-dark) 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+    position: relative;
+    z-index: 1;
+  }
+  .step-icon i {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .journey-step h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--midnight);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .journey-step p {
+    font-size: 0.88rem;
+    color: var(--charcoal);
+    font-weight: 300;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Arrow connector */
+  .step-arrow {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid var(--champagne);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: var(--shadow-soft);
+  }
+  .step-arrow i {
+    color: var(--rose-gold);
+    font-size: 0.8rem;
+  }
+
+  .journey-cta {
+    text-align: center;
+    margin-top: 60px;
+  }
+  .journey-btn {
+    display: inline-flex;
+    width: auto;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 1000px) {
+    .journey-steps { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .step-arrow { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .journey-steps { grid-template-columns: 1fr; }
+
+    .journey-btn {
+      display: inline-flex;
+      width: auto;
+      max-width: 100%;
+      white-space: normal;
+      justify-content: center;
+    }
+  }
+</style>
+

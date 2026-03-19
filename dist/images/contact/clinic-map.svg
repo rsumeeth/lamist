@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700">
+  <rect width="1400" height="700" fill="#fff7f3"/>
+  <rect x="90" y="80" width="1220" height="540" rx="30" fill="#fffef9" stroke="#e84c8a" stroke-opacity=".35"/>
+  <circle cx="720" cy="350" r="34" fill="#e84c8a"/>
+  <path d="M720 250a100 100 0 0 1 0 200a100 100 0 0 1 0-200z" fill="none" stroke="#e84c8a" stroke-opacity=".35" stroke-width="10"/>
+  <text x="700" y="540" text-anchor="middle" fill="#1a1a2e" font-size="44" font-family="Outfit, Arial, sans-serif">Clinic Map Placeholder</text>
+</svg>

@@ -1,0 +1,336 @@
+---
+// Hero.astro — IVF-focused hero, mobile-first
+---
+
+<section class="hero" id="home" aria-label="Hero section">
+  <!-- Background pattern -->
+  <div class="hero-bg-pattern" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <!-- Text Column -->
+    <div class="hero-text">
+      <div class="hero-badge">
+        <i class="fa-solid fa-circle-dot"></i>
+        Delhi's Most Trusted IVF Centre
+      </div>
+
+      <h1>
+        Helping You Start Your<br />
+        <em>Parenthood Journey</em><br />
+        with Advanced IVF Care
+      </h1>
+
+      <p class="hero-description">
+        Expert IVF & fertility care in the heart of Delhi. With 75% success rates, 20+ years of experience, and a compassionate team — your dream of parenthood is closer than you think.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-rose hero-btn-primary">
+          <i class="fa-solid fa-calendar-check"></i>
+          Book Consultation
+        </a>
+        <a href="tel:+919800000000" class="btn-outline hero-btn-secondary">
+          <i class="fa-solid fa-phone"></i>
+          Call Now
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number" data-count="2000">2000+</div>
+          <div class="stat-label">Successful IVF Cases</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">75%</div>
+          <div class="stat-label">IVF Success Rate</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Column -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-image-wrapper">
+        <div class="hero-img-placeholder">
+          <img
+            src="/images/hero/hero-lamist-people-2.png"
+            alt="LAMNIST fertility specialist team"
+            class="hero-photo"
+            loading="eager"
+          />
+        </div>
+
+        <!-- Experience badge -->
+        <div class="hero-exp-badge">
+          <span class="badge-num">20+</span>
+          <span class="badge-label">Years of<br />Excellence</span>
+        </div>
+
+        <!-- Rating badge -->
+        <div class="hero-rating-badge">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <strong>5.0</strong>
+            <span>Google Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- NABH accreditation -->
+      <div class="hero-nabh">
+        <i class="fa-solid fa-shield-halved"></i>
+        NABH Accredited Clinic
+      </div>
+
+      <div class="hero-decoration"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--champagne-light) 0%, var(--cream) 55%, var(--blush) 100%);
+    overflow: hidden;
+    padding-top: 90px;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23E84C8A' stroke-width='0.4' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .hero-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  /* Text */
+  .hero-text {
+    animation: fadeInUp 0.9s ease 0.2s both;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(232, 76, 138, 0.1);
+    border: 1px solid rgba(232, 76, 138, 0.25);
+    border-radius: 30px;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+    margin-bottom: 28px;
+  }
+  .hero-badge i { font-size: 0.55rem; }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4.5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 28px;
+    color: var(--midnight);
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--rose-gold);
+  }
+
+  .hero-description {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    color: var(--charcoal);
+    margin-bottom: 38px;
+    max-width: 500px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(26, 26, 46, 0.08);
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 300;
+    color: var(--rose-gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-top: 6px;
+  }
+
+  /* Visual */
+  .hero-visual {
+    position: relative;
+    animation: fadeInUp 0.9s ease 0.45s both;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+    border-radius: 280px 280px 30px 30px;
+    overflow: visible;
+  }
+
+  .hero-img-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(180deg, var(--champagne) 0%, var(--blush) 100%);
+    border-radius: 280px 280px 30px 30px;
+    box-shadow: var(--shadow-elegant);
+    overflow: hidden;
+  }
+
+  .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 24%;
+    display: block;
+  }
+
+  /* Experience badge */
+  .hero-exp-badge {
+    position: absolute;
+    bottom: 40px;
+    left: -30px;
+    background: var(--midnight);
+    color: white;
+    padding: 20px 24px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-elegant);
+  }
+  .hero-exp-badge .badge-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--rose-gold);
+    line-height: 1;
+  }
+  .hero-exp-badge .badge-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin-top: 4px;
+  }
+
+  /* Rating badge */
+  .hero-rating-badge {
+    position: absolute;
+    top: 40px;
+    right: -20px;
+    background: white;
+    padding: 16px 20px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-elegant);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-rating-badge i { color: var(--gold); font-size: 1.2rem; }
+  .hero-rating-badge strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--midnight);
+    line-height: 1;
+  }
+  .hero-rating-badge span {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+  }
+
+  /* NABH */
+  .hero-nabh {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+  }
+  .hero-nabh i { color: var(--rose-gold); }
+
+  /* Decoration ring */
+  .hero-decoration {
+    position: absolute;
+    bottom: -20px;
+    left: -40px;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(232, 76, 138, 0.25);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 900px) {
+    .hero { padding-top: 80px; min-height: auto; }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 50px;
+      padding: 60px clamp(20px, 5vw, 40px) 80px;
+    }
+
+    .hero-visual { order: -1; max-width: 340px; margin: 0 auto; width: 100%; }
+    .hero-exp-badge { left: -10px; padding: 14px 18px; }
+    .hero-exp-badge .badge-num { font-size: 1.6rem; }
+    .hero-rating-badge { right: -48px; top: -44px; }
+
+    .hero-buttons { flex-direction: column; }
+    .hero-btn-primary, .hero-btn-secondary { width: 100%; justify-content: center; }
+
+    .hero-stats { gap: 24px; }
+    .hero-badge { font-size: 0.65rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-visual { max-width: 260px; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; }
+  }
+</style>

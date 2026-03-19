@@ -1,0 +1,148 @@
+---
+// TrustBar.astro — Trust indicators marquee strip
+---
+
+<section class="trust-bar" aria-label="Trust indicators">
+  <div class="trust-track" role="list" aria-label="Clinic accreditations and achievements">
+    <div class="trust-content">
+      <!-- Set 1 -->
+      <div class="trust-item" role="listitem">
+        <i class="fa-solid fa-baby" aria-hidden="true"></i>
+        <span>2000+ Successful IVF Cases</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem">
+        <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+        <span>20+ Years Experience</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem">
+        <i class="fa-solid fa-star" aria-hidden="true"></i>
+        <span>5.0★ Google Rating</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+        <span>NABH Accredited</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem">
+        <i class="fa-solid fa-percent" aria-hidden="true"></i>
+        <span>75% IVF Success Rate</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <span>Delhi's Most Trusted Fertility Centre</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="trust-item" role="listitem" aria-hidden="true">
+        <i class="fa-solid fa-baby"></i>
+        <span>2000+ Successful IVF Cases</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem" aria-hidden="true">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>20+ Years Experience</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem" aria-hidden="true">
+        <i class="fa-solid fa-star"></i>
+        <span>5.0★ Google Rating</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem" aria-hidden="true">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>NABH Accredited</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem" aria-hidden="true">
+        <i class="fa-solid fa-percent"></i>
+        <span>75% IVF Success Rate</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+      <div class="trust-item" role="listitem" aria-hidden="true">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Delhi's Most Trusted Fertility Centre</span>
+      </div>
+      <div class="trust-dot" aria-hidden="true">◆</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-bar {
+    background: var(--midnight);
+    padding: 22px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Fade edges */
+  .trust-bar::before,
+  .trust-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .trust-bar::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--midnight), transparent);
+  }
+  .trust-bar::after {
+    right: 0;
+    background: linear-gradient(-90deg, var(--midnight), transparent);
+  }
+
+  .trust-track { overflow: hidden; }
+
+  .trust-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: marquee 40s linear infinite;
+    width: max-content;
+  }
+
+  .trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 40px;
+  }
+
+  .trust-item i {
+    color: var(--rose-gold);
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .trust-item span {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--champagne);
+    letter-spacing: 0.08em;
+  }
+
+  .trust-dot {
+    color: var(--rose-gold);
+    font-size: 0.5rem;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .trust-content { animation-play-state: paused; }
+  }
+
+  @media (max-width: 600px) {
+    .trust-item span { font-size: 0.95rem; }
+    .trust-item { padding: 0 28px; }
+  }
+</style>

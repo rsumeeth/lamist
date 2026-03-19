@@ -1,0 +1,202 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<MainLayout title="About LAMNIST IVF Clinic | Fertility Specialists in Delhi">
+  <Navbar />
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <span class="section-tag">About LAMNIST</span>
+        <h1>A Trusted Partner in Your <em>Fertility Journey</em></h1>
+        <p>
+          LAMNIST is a Delhi-based IVF and gynecology centre combining advanced reproductive medicine with compassionate, personalized care for every couple.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-content" id="about">
+      <div class="about-inner">
+        <div class="about-image-grid">
+          <figure class="about-img"><img src="/images/about/facility.svg" alt="LAMNIST reception and patient lounge placeholder" /></figure>
+          <figure class="about-img"><img src="/images/about/lab.svg" alt="Embryology laboratory placeholder visual" /></figure>
+          <figure class="about-img"><img src="/images/about/team.svg" alt="Clinical team placeholder visual" /></figure>
+        </div>
+
+        <div class="about-text">
+          <h2>Clinical Excellence with Human-Centered Care</h2>
+          <p>
+            Our team supports couples through diagnosis, treatment planning, cycle management, and follow-up with complete transparency at every step.
+          </p>
+          <p>
+            We focus on outcomes that matter: accurate diagnosis, protocol personalization, lab quality, and emotional support throughout the process.
+          </p>
+
+          <div class="about-features">
+            <article class="about-feature">
+              <div class="about-feature-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+              <div>
+                <h3>Advanced IVF Lab</h3>
+                <p>Modern embryology workflows for better embryo culture outcomes.</p>
+              </div>
+            </article>
+            <article class="about-feature">
+              <div class="about-feature-icon"><i class="fa-solid fa-user-doctor"></i></div>
+              <div>
+                <h3>Specialist Team</h3>
+                <p>Experienced fertility doctors and clinical coordinators.</p>
+              </div>
+            </article>
+            <article class="about-feature">
+              <div class="about-feature-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+              <div>
+                <h3>Compassionate Support</h3>
+                <p>Confidential counselling and clear guidance at every stage.</p>
+              </div>
+            </article>
+            <article class="about-feature">
+              <div class="about-feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
+              <div>
+                <h3>Quality & Safety</h3>
+                <p>Evidence-led protocols with strict patient safety standards.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>
+
+<style>
+  .page-hero {
+    padding: 150px clamp(20px, 5vw, 60px) 70px;
+    background: linear-gradient(150deg, var(--champagne-light) 0%, var(--cream) 70%, var(--blush) 100%);
+  }
+
+  .page-hero-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--midnight);
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--rose-gold);
+  }
+
+  .page-hero p {
+    margin: 16px auto 0;
+    max-width: 720px;
+    font-size: 1rem;
+    color: var(--charcoal);
+    font-weight: 300;
+  }
+
+  .about-content {
+    padding: var(--section-pad);
+    background: var(--cream);
+  }
+
+  .about-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(26px, 4vw, 54px);
+  }
+
+  .about-image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    align-self: start;
+  }
+
+  .about-img:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .about-img img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .about-text h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--midnight);
+    margin-bottom: 14px;
+  }
+
+  .about-text p {
+    color: var(--charcoal);
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+
+  .about-features {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .about-feature {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .about-feature-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(232, 76, 138, 0.12);
+    color: var(--rose-gold);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .about-feature h3 {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    margin-bottom: 6px;
+    color: var(--midnight);
+  }
+
+  .about-feature p {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--charcoal);
+  }
+
+  @media (max-width: 960px) {
+    .about-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about-features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
