@@ -8,108 +8,121 @@ export interface Props {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  keywords?: string;
+  siteName?: string;
+  schemas?: Record<string, unknown>[];
+  preloadImages?: { href: string; type?: string }[];
 }
 
 const {
-  title = 'Best IVF Clinic in Delhi | LAMNIST Fertility Centre',
-  description = "LAMNIST — Delhi's trusted IVF & fertility clinic with 75% success rate, 20+ years of experience & 2000+ successful cases. Book your free consultation today.",
-  canonical = 'https://lamnist.com/',
-  ogImage = '/og-image.jpg',
+  title = 'Femme Nest Hospital | Best Maternity Centre & Pregnancy Care in East Delhi',
+  description = 'Femme Nest Hospital offers expert maternity, pregnancy, gynecology, and fertility care in East Delhi with compassionate doctors and modern facilities.',
+  canonical = 'https://www.femmenest.com/',
+  ogImage = '/images/fn/infertility.webp',
+  keywords = 'Femme Nest Hospital, maternity hospital East Delhi, best maternity centre East Delhi, pregnancy care East Delhi, gynecology clinic East Delhi, fertility clinic East Delhi',
+  siteName = 'Femme Nest Hospital',
+  schemas = [],
+  preloadImages = [],
 } = Astro.props;
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": ["MedicalClinic", "LocalBusiness"],
-  "name": "LAMNIST IVF & Fertility Centre",
-  "description": "Leading IVF and Gynecology clinic in Delhi offering advanced fertility treatments with 75% success rate.",
-  "url": "https://lamnist.com",
-  "telephone": "+91-9800000000",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Your Clinic Address",
-    "addressLocality": "New Delhi",
-    "addressRegion": "Delhi",
-    "postalCode": "110001",
-    "addressCountry": "IN"
+const localBusinessSchema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': ['Hospital', 'MedicalClinic', 'LocalBusiness'],
+  name: 'Femme Nest Hospital',
+  description: 'Maternity and pregnancy care hospital in East Delhi offering gynecology, fertility care, and women\'s wellness services.',
+  url: 'https://www.femmenest.com',
+  telephone: '+91-9800000000',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Femme Nest Hospital, East Delhi',
+    addressLocality: 'East Delhi',
+    addressRegion: 'Delhi',
+    postalCode: '110001',
+    addressCountry: 'IN',
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "28.6139",
-    "longitude": "77.2090"
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '28.6139',
+    longitude: '77.2090',
   },
-  "openingHoursSpecification": [
+  openingHoursSpecification: [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-      "opens": "09:00",
-      "closes": "19:00"
-    }
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '09:00',
+      closes: '19:00',
+    },
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "324"
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '324',
   },
-  "medicalSpecialty": "IVF, Fertility Treatment, Gynecology"
+  medicalSpecialty: 'Maternity Care, Pregnancy Care, Gynecology, Fertility Care',
 };
+
+const mergedSchemas = [localBusinessSchema, ...schemas];
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#E84C8A" />
+  <link rel="icon" href="/logo-hospital-favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="/logo-hospital-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/logo-hospital-favicon.png" />
 
-  <!-- SEO -->
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="keywords" content="IVF clinic Delhi, best IVF center Delhi, fertility treatment Delhi, IVF cost Delhi, IVF doctor Delhi, gynecologist Delhi, PCOS treatment Delhi, IUI Delhi" />
+  <meta name="keywords" content={keywords} />
   <link rel="canonical" href={canonical} />
+  {preloadImages.map((image) => (
+    <link rel="preload" as="image" href={image.href} type={image.type} />
+  ))}
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImage} />
-  <meta property="og:site_name" content="LAMNIST IVF" />
+  <meta property="og:site_name" content={siteName} />
   <meta property="og:locale" content="en_IN" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  {mergedSchemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
 </head>
 <body>
   <slot />
   <ConversionAssist />
   <Footer />
 
-  <!-- Global scroll reveal -->
   <script>
     const revealEls = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(el => {
+      entries.forEach((el) => {
         if (el.isIntersecting) {
           el.target.classList.add('visible');
           observer.unobserve(el.target);
         }
       });
     }, { threshold: 0.1 });
-    revealEls.forEach(el => observer.observe(el));
+    revealEls.forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>

@@ -1,0 +1,342 @@
+---
+import { homeV2Stats } from '../../data/homepageV2Content';
+---
+
+<section class="home-v2-hero" id="home">
+  <header class="home-v2-nav" id="home-v2-nav">
+    <a href="/" class="brand" aria-label="Femme Nest Hospital home">
+      <span class="brand-primary">Femme Nest</span>
+      <span class="brand-secondary">Hospital</span>
+    </a>
+
+    <nav class="desktop-links" aria-label="Primary navigation">
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#stories">Stories</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn-rose nav-cta">Book Appointment</a>
+
+    <button class="menu-toggle" id="home-v2-menu-toggle" aria-expanded="false" aria-controls="home-v2-mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Open menu</span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="home-v2-mobile-menu" aria-hidden="true">
+    <a href="#services">Services</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#stories">Stories</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn-rose mobile-cta">Book Appointment</a>
+  </div>
+
+  <div class="hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Best Maternity Centre and Pregnancy Care in East Delhi</span>
+      <h1>Compassionate Maternity and Women Wellness Care, Designed Around Your Family</h1>
+      <p>
+        Femme Nest Hospital combines clinical excellence with thoughtful support in maternity, pregnancy,
+        gynecology, and fertility care. Every consultation is clear, personal, and outcome-focused.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-rose">Schedule Consultation</a>
+        <a href="tel:+919800000000" class="btn-outline">Call +91 98000 00000</a>
+      </div>
+      <div class="stat-grid">
+        {homeV2Stats.map((stat) => (
+          <article class="stat-card">
+            <p class="stat-value">{stat.value}</p>
+            <p class="stat-label">{stat.label}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <div class="hero-media reveal">
+      <img
+        src="/images/fn/infertility.webp"
+        alt="Femme Nest Hospital pregnancy and fertility care"
+        width="1200"
+        height="900"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
+      <div class="hero-chip chip-a">
+        <strong>Trusted Care</strong>
+        <span>East Delhi women-first team</span>
+      </div>
+      <div class="hero-chip chip-b">
+        <strong>Integrated Support</strong>
+        <span>Maternity, gynecology, fertility</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-v2-hero {
+    min-height: 100svh;
+    background: linear-gradient(150deg, #fff9f5 0%, #fff1f5 48%, #fffcf8 100%);
+    padding: 20px clamp(16px, 4vw, 56px) 56px;
+  }
+
+  .home-v2-nav {
+    max-width: 1260px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 18px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(232, 76, 138, 0.18);
+    backdrop-filter: blur(10px);
+    border-radius: 999px;
+    padding: 10px 16px;
+    position: sticky;
+    top: 12px;
+    z-index: 30;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .brand-primary {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--midnight);
+  }
+
+  .brand-secondary {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+  }
+
+  .desktop-links {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+  }
+
+  .desktop-links a {
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  .nav-cta {
+    padding: 10px 20px;
+    font-size: 0.72rem;
+  }
+
+  .menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    padding: 8px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--midnight);
+    margin: 4px 0;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .hero-grid {
+    max-width: 1260px;
+    margin: 42px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    background: rgba(232, 76, 138, 0.14);
+    border: 1px solid rgba(232, 76, 138, 0.24);
+    color: var(--rose-gold);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .hero-copy h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 4.1rem);
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .hero-copy p {
+    color: #5f5964;
+    max-width: 52ch;
+    margin-bottom: 22px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(26, 26, 46, 0.1);
+    background: #fff;
+  }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--rose-gold);
+  }
+
+  .stat-label {
+    margin-top: 6px;
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #6e6874;
+  }
+
+  .hero-media {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(26, 26, 46, 0.16);
+    min-height: 300px;
+  }
+
+  .hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-chip {
+    position: absolute;
+    border-radius: 14px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(232, 76, 138, 0.2);
+    box-shadow: 0 12px 28px rgba(26, 26, 46, 0.12);
+  }
+
+  .hero-chip strong {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--midnight);
+  }
+
+  .hero-chip span {
+    font-size: 0.69rem;
+    color: #6a6470;
+  }
+
+  .chip-a {
+    top: 16px;
+    left: 16px;
+  }
+
+  .chip-b {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  @media (max-width: 980px) {
+    .home-v2-nav {
+      grid-template-columns: 1fr auto;
+      border-radius: 16px;
+    }
+
+    .desktop-links,
+    .nav-cta {
+      display: none;
+    }
+
+    .menu-toggle,
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu {
+      max-width: 1260px;
+      margin: 8px auto 0;
+      background: #fff;
+      border: 1px solid rgba(26, 26, 46, 0.12);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 10px 8px;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mobile-cta {
+      margin-top: 8px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+      margin-top: 24px;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('home-v2-menu-toggle');
+  const menu = document.getElementById('home-v2-mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menu?.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  });
+</script>

@@ -1,0 +1,77 @@
+---
+import { homeV2Services } from '../../data/homepageV2Content';
+---
+
+<section class="home-v2-services section reveal" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <p class="section-tag">Core Services</p>
+    <h2 class="section-title" id="services-title">Women-Centered Care Across Every Stage</h2>
+    <p class="section-subtitle">
+      Comprehensive maternity, gynecology, and fertility support tailored for modern families in East Delhi.
+    </p>
+
+    <div class="service-grid">
+      {homeV2Services.map((service) => (
+        <article class="service-card">
+          <img src={service.image} alt={service.alt} width="900" height="600" loading="lazy" decoding="async" />
+          <div class="service-copy">
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-v2-services {
+    background: linear-gradient(180deg, #fff 0%, #fff7f3 100%);
+  }
+
+  .container {
+    max-width: 1260px;
+    margin: 0 auto;
+  }
+
+  .service-grid {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .service-card {
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(26, 26, 46, 0.1);
+    background: #fff;
+  }
+
+  .service-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .service-copy {
+    padding: 16px;
+  }
+
+  .service-copy h3 {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    margin-bottom: 8px;
+  }
+
+  .service-copy p {
+    color: #655f6a;
+    font-size: 0.96rem;
+  }
+
+  @media (max-width: 900px) {
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,131 @@
+---
+import { homeV2Doctors, homeV2Stories } from '../../data/homepageV2Content';
+---
+
+<section class="home-v2-team section reveal" id="doctors" aria-labelledby="doctor-title">
+  <div class="container">
+    <p class="section-tag">Specialists</p>
+    <h2 class="section-title" id="doctor-title">Experienced Doctors You Can Trust</h2>
+    <div class="doctor-grid">
+      {homeV2Doctors.map((doctor) => (
+        <article class="doctor-card">
+          <img src={doctor.image} alt={doctor.name} width="500" height="600" loading="lazy" decoding="async" />
+          <div class="doctor-copy">
+            <h3>{doctor.name}</h3>
+            <p class="doctor-role">{doctor.specialty}</p>
+            <p class="doctor-time">{doctor.schedule}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="home-v2-stories section reveal" id="stories" aria-labelledby="stories-title">
+  <div class="container">
+    <p class="section-tag">Patient Stories</p>
+    <h2 class="section-title" id="stories-title">Real Families, Real Confidence</h2>
+    <div class="story-grid">
+      {homeV2Stories.map((story) => (
+        <article class="story-card">
+          <p class="story-quote">"{story.quote}"</p>
+          <p class="story-name">{story.name}</p>
+          <p class="story-detail">{story.detail}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    max-width: 1260px;
+    margin: 0 auto;
+  }
+
+  .doctor-grid {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .doctor-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(26, 26, 46, 0.1);
+  }
+
+  .doctor-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .doctor-copy {
+    padding: 14px;
+  }
+
+  .doctor-copy h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .doctor-role,
+  .doctor-time {
+    color: #6a6371;
+    font-size: 0.8rem;
+  }
+
+  .home-v2-stories {
+    background: linear-gradient(180deg, #fff8f2 0%, #fff 100%);
+  }
+
+  .story-grid {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .story-card {
+    border-radius: 16px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid rgba(26, 26, 46, 0.1);
+  }
+
+  .story-quote {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  .story-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .story-detail {
+    font-size: 0.78rem;
+    color: #6a6371;
+  }
+
+  @media (max-width: 1060px) {
+    .doctor-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .story-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .doctor-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

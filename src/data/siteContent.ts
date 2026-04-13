@@ -83,12 +83,12 @@ export const services: ServiceItem[] = [
 
 export const faqs: FaqItem[] = [
   {
-    question: 'What makes LAMNIST different from other fertility clinics in Delhi?',
+    question: 'What makes Femme Nest different from other fertility clinics in Delhi?',
     answer:
-      'LAMNIST combines personalized fertility planning with advanced IVF protocols, transparent counselling, and close clinical follow-up so every couple receives a treatment path built for their specific case.',
+      'Femme Nest combines personalized fertility planning with advanced IVF protocols, transparent counselling, and close clinical follow-up so every couple receives a treatment path built for their specific case.',
   },
   {
-    question: 'What is the typical IVF success rate at LAMNIST?',
+    question: 'What is the typical IVF success rate at Femme Nest?',
     answer:
       'Success rates vary by age, ovarian reserve, embryo quality, and medical history. We provide case-specific success expectations after diagnosis and focus on evidence-based protocols to maximize outcomes.',
   },
@@ -107,26 +107,26 @@ export const faqs: FaqItem[] = [
 export const heroStats: HeroStatItem[] = [
   { value: '20+', label: 'Years of Care' },
   { value: '2,400+', label: 'Miracles Born' },
-  { value: '5.0 ♥', label: 'Patient Love Score' },
+  { value: '5.0/5', label: 'Patient Love Score' },
   { value: '24/7', label: 'Care Support' },
 ];
 
 export const heroPills: HeroPillItem[] = [
   {
     id: 'success-rate',
-    icon: '🌸',
+    icon: 'SR',
     label: 'Success Rate',
     value: '94% IVF Outcomes',
   },
   {
     id: 'wellness',
-    icon: '🫶',
+    icon: 'WW',
     label: 'Dedicated to',
     value: "Women's Wellness",
   },
   {
     id: 'care-support',
-    icon: '✨',
+    icon: 'CS',
     label: 'Experience',
     value: '24/7 Care Support',
   },
@@ -179,7 +179,7 @@ export const reviews: ReviewItem[] = [
 
 export const contactDetails = {
   phone: '+91 98000 00000',
-  email: 'care@lamnist.com',
+  email: 'care@femmenest.com',
   location: 'East Delhi, India',
   hours: 'Mon - Sat: 9:00 AM - 7:00 PM',
 };
@@ -232,4 +232,5 @@ export const footerColumns = {
     { label: 'Gynecology & IVF Care Centre', href: '/contact' },
   ],
 };
+
 

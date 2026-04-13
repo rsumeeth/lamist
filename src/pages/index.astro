@@ -1,26 +1,3209 @@
----
-import MainLayout from '../layouts/MainLayout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import TrustBar from '../components/TrustBar.astro';
-import Services from '../components/Services.astro';
-import Doctor from '../components/Doctor.astro';
-import PatientJourney from '../components/PatientJourney.astro';
-import ReviewsRail from '../components/ReviewsRail.astro';
-import FAQ from '../components/FAQ.astro';
-import ContactSection from '../components/ContactSection.astro';
----
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/logo-hospital-favicon.png" type="image/png">
+<meta name="description" content="Discover trusted maternity and pregnancy care at Femme Nest Hospital in East Delhi. Consult experienced gynecologists, fertility specialists, and maternity experts.">
+<meta name="keywords" content="Femme Nest Hospital, best maternity centre East Delhi, pregnancy care East Delhi, maternity hospital East Delhi, gynecology clinic East Delhi, fertility care East Delhi">
+<link rel="canonical" href="https://www.femmenest.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.femmenest.com/">
+<meta property="og:title" content="Femme Nest Hospital | Best Maternity Centre & Pregnancy Care in East Delhi">
+<meta property="og:description" content="Discover trusted maternity and pregnancy care at Femme Nest Hospital in East Delhi. Consult experienced gynecologists, fertility specialists, and maternity experts.">
+<meta property="og:image" content="/images/fn/infertility.webp">
+<meta property="og:site_name" content="Femme Nest Hospital">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Femme Nest Hospital | Best Maternity Centre & Pregnancy Care in East Delhi">
+<meta name="twitter:description" content="Discover trusted maternity and pregnancy care at Femme Nest Hospital in East Delhi. Consult experienced gynecologists, fertility specialists, and maternity experts.">
+<meta name="twitter:image" content="/images/fn/infertility.webp">
+<link rel="preload" as="image" href="/images/fn/infertility.webp" type="image/webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Hospital","MedicalClinic","LocalBusiness"],"name":"Femme Nest Hospital","description":"Maternity and pregnancy care hospital in East Delhi offering gynecology, fertility care, and women's wellness services.","url":"https://www.femmenest.com","telephone":"+91-9800000000","address":{"@type":"PostalAddress","streetAddress":"Femme Nest Hospital, East Delhi","addressLocality":"East Delhi","addressRegion":"Delhi","postalCode":"110001","addressCountry":"IN"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],"medicalSpecialty":"Maternity Care, Pregnancy Care, Gynecology, Fertility Care"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why choose Femme Nest Hospital for maternity care in East Delhi?","acceptedAnswer":{"@type":"Answer","text":"Femme Nest Hospital offers obstetrics, gynecology, fertility, and newborn support under one care team with clear communication and patient-focused plans."}},{"@type":"Question","name":"Do you provide high-risk pregnancy management?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our specialists support high-risk pregnancies with close monitoring, maternal-fetal assessments, and coordinated delivery planning."}},{"@type":"Question","name":"Can I book consultation online for pregnancy or gynecology care?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can book appointments through our website contact form or call directly for faster slot confirmation."}},{"@type":"Question","name":"Do you support fertility consultation and IVF planning?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide fertility assessment, counseling, and IVF planning pathways based on your medical profile and goals."}}]}</script>
+<title>Femme Nest Hospital | Best Maternity Centre & Pregnancy Care in East Delhi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Dancing+Script:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style is:global>
+/* CSS CUSTOM PROPERTIES & RESET */
+:root {
+  --tangerine: #F08C21;
+  --butter: #F2D88F;
+  --blush: #E36888;
+  --sea: #6698CC;
+  --matcha: #B4B534;
+  --tangerine-light: #f8c97a;
+  --blush-light: #f0a8b8;
+  --sea-light: #a3c4e0;
+  --cream: #FFF9F2;
+  --warm-white: #FFFCF8;
+  --deep-text: #2D1F1A;
+  --soft-text: #6B5B52;
+  --muted: #A89890;
+  --font-primary: 'Outfit', sans-serif;
+  --font-secondary: 'DM Sans', sans-serif;
+  --font-accent: 'Dancing Script', cursive;
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
 
-<MainLayout>
-  <Navbar />
-  <main>
-    <Hero />
-    <TrustBar />
-    <Services />
-    <Doctor />
-    <PatientJourney />
-    <ReviewsRail />
-    <FAQ />
-    <ContactSection />
-  </main>
-</MainLayout>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--deep-text);
+  background: var(--warm-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; font-family: inherit; }
+
+/* Scroll animation base */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   NAVIGATION
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.25rem 3rem;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  transition: all 0.5s ease;
+  background: rgba(255, 252, 248, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 40px rgba(227, 104, 136, 0.08);
+}
+.nav.scrolled {
+  background: rgba(255, 252, 248, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 40px rgba(227, 104, 136, 0.08);
+  padding: 1rem 3rem;
+  min-height: 90px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+/* Logo image */
+.nav-logo-img {
+  height: 78px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.nav.scrolled .nav-logo-img { height: 78px; }
+/* On hero â€” keep same as normal nav (solid header) */
+.nav.hero-nav .nav-logo-img {
+  filter: none;
+  height: 78px;
+}
+/* Footer logo â€” bright on dark bg */
+.footer-logo {
+  filter: brightness(0) invert(1);
+  height: 60px !important;
+  opacity: 0.9;
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+.nav-logo-text .femme {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--blush);
+  letter-spacing: 0.02em;
+}
+/* Hero nav â€” same as normal (solid header always) */
+.nav.hero-nav .nav-logo-text .femme { color: var(--blush); }
+.nav.hero-nav .nav-logo-text .femme span { color: var(--tangerine); }
+.nav.hero-nav .nav-logo-text .hospital { color: var(--blush); }
+.nav.hero-nav .nav-links a { color: var(--deep-text); }
+.nav.hero-nav .nav-links a::after { background: linear-gradient(90deg, var(--blush), var(--tangerine)); }
+.nav.hero-nav .nav-mobile-toggle span { background: var(--deep-text); }
+
+.nav-logo-text .femme span { color: var(--tangerine); }
+.nav-logo-text .hospital {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--blush);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.nav-right .nav-icon-link + .nav-icon-link { margin-left: 0; }
+
+/* Map / Location section */
+.map-section {
+  padding: 5rem 0 6rem;
+  background: var(--warm-white, #FDF8F4);
+}
+.map-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.map-sub {
+  font-family: var(--font-secondary);
+  color: var(--soft-text, #6B5A52);
+  font-size: 1.05rem;
+  margin-top: 0.75rem;
+}
+.map-wrap {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(45,31,26,0.14);
+  background: #eee;
+}
+.map-wrap iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+.map-cta {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.4rem;
+  background: #fff;
+  color: var(--blush);
+  border-radius: 999px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(45,31,26,0.18);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.map-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(45,31,26,0.24);
+}
+@media (max-width: 700px) {
+  .map-section { padding: 3.5rem 0 4rem; }
+  .map-wrap iframe { height: 360px; }
+  .map-cta { bottom: 0.85rem; right: 0.85rem; padding: 0.7rem 1.1rem; font-size: 0.85rem; }
+}
+
+/* Floating social dock â€” bottom right */
+.social-dock {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 90;
+}
+.social-dock a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--blush);
+  box-shadow: 0 12px 30px rgba(45,31,26,0.18);
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s, background 0.25s;
+  text-decoration: none;
+}
+.social-dock a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(45,31,26,0.24);
+}
+.social-dock a svg { width: 22px; height: 22px; }
+.social-dock .sd-call { color: #E36888; }
+.social-dock .sd-wa { color: #25D366; }
+.social-dock .sd-ig {
+  background: linear-gradient(135deg,#FEDA77,#F58529 25%,#DD2A7B 55%,#8134AF 80%,#515BD4);
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .social-dock { bottom: 1rem; right: 1rem; gap: 0.55rem; }
+  .social-dock a { width: 46px; height: 46px; }
+  .social-dock a svg { width: 20px; height: 20px; }
+}
+/* Resources dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown-trigger { display: inline-flex; align-items: center; cursor: pointer; }
+.nav-links .nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 240px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(45,31,26,0.18);
+  padding: 0.75rem 0.75rem;
+  margin: 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 100;
+}
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px; left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px; height: 12px;
+  background: #fff;
+  border-radius: 2px;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(4px);
+}
+.nav-links .nav-dropdown-menu li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(45,31,26,0.08);
+}
+.nav-links .nav-dropdown-menu li:last-child { border-bottom: none; }
+.nav-links .nav-dropdown-menu a {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.9rem 1.25rem !important;
+  border-radius: 10px;
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--deep-text);
+  white-space: nowrap;
+  text-align: left;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links .nav-dropdown-menu a::after { display: none; }
+.nav-links .nav-dropdown-menu a:hover {
+  background: rgba(227,104,136,0.09);
+  color: var(--blush);
+}
+.nav-links a {
+  font-family: var(--font-secondary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--deep-text);
+  position: relative;
+  transition: color 0.3s;
+  padding: 0.4rem 0;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blush), var(--tangerine));
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--blush); }
+.nav-links a:hover::after { width: 100%; }
+
+/* Nav dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle { display: flex; align-items: center; gap: 4px; }
+.nav-dropdown-toggle svg { transition: transform 0.25s; }
+.nav-dropdown:hover .nav-dropdown-toggle svg { transform: rotate(180deg); }
+.nav-dropdown-menu {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
+  background: #fff; border-radius: 12px; padding: 0.5rem 0;
+  min-width: 150px; opacity: 0; visibility: hidden;
+  box-shadow: 0 12px 36px rgba(45,31,26,0.14);
+  transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu li { list-style: none; }
+.nav-dropdown-menu a {
+  display: block; padding: 0.55rem 1.25rem; font-size: 0.88rem;
+  color: var(--deep-text); white-space: nowrap; transition: background 0.2s, color 0.2s;
+}
+.nav-dropdown-menu a:hover { background: rgba(227,104,136,0.08); color: var(--blush); }
+.nav-dropdown-menu a::after { display: none; }
+
+/* Nav call & whatsapp icons */
+.nav-icon-link {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(227, 104, 136, 0.08);
+  color: var(--blush) !important;
+  transition: all 0.3s;
+}
+.nav-icon-link:hover {
+  background: rgba(227, 104, 136, 0.15);
+  transform: translateY(-2px);
+}
+.nav-icon-link::after { display: none !important; }
+.nav-whatsapp {
+  color: #25D366 !important;
+  background: rgba(37, 211, 102, 0.08);
+}
+.nav-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.15);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 1rem 2.75rem !important;
+  background: linear-gradient(135deg, var(--blush), var(--tangerine));
+  color: white !important;
+  border-radius: 999px;
+  font-family: var(--font-primary) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: visible;
+  width: auto;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 6px 24px rgba(227, 104, 136, 0.35), 0 2px 6px rgba(240, 140, 33, 0.15);
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(227, 104, 136, 0.4);
+}
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  padding: 5px;
+}
+.nav-mobile-toggle span {
+  width: 28px;
+  height: 2.5px;
+  background: var(--blush);
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SHARED
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.section {
+  position: relative;
+  padding: 3rem 3rem;
+  overflow: hidden;
+}
+.section-label {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--blush);
+  background: none;
+  margin-bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  position: relative;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 44px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blush), var(--tangerine));
+  border-radius: 3px;
+}
+.section-label::after {
+  content: '';
+  display: inline-block;
+  width: 44px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--tangerine), var(--blush));
+  border-radius: 3px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--deep-text);
+  margin-bottom: 1.5rem;
+}
+h1, h2, h3, .about-title, .hero-subtitle-main {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+.section-subtitle {
+  font-family: var(--font-secondary);
+  font-size: 1.35rem;
+  color: var(--soft-text);
+  line-height: 1.7;
+  max-width: 650px;
+}
+.container {
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   HERO â€” FULL SCREEN IMMERSIVE IMAGE
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+  overflow: hidden;
+}
+/* Slider slides â€” smooth slide left */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 110px;
+  transform: translateX(100%);
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+.hero-slide--active {
+  transform: translateX(0);
+  z-index: 2;
+  pointer-events: auto;
+}
+.hero-slide--exit {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+.hero-slide.sliding {
+  transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #2d1f1a;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right 25%;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(30,20,15,0.5) 0%, rgba(30,20,15,0.2) 35%, rgba(30,20,15,0.15) 55%, rgba(30,20,15,0.75) 100%),
+    linear-gradient(90deg, rgba(30,20,15,0.7) 0%, rgba(30,20,15,0.35) 35%, transparent 60%);
+}
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 0 4rem;
+  max-width: 780px;
+}
+/* Slider arrows */
+.hero-arrow {
+  position: absolute; top: 50%; z-index: 5;
+  transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,0.18); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(6px);
+  transition: background 0.25s, transform 0.25s;
+}
+.hero-arrow svg { width: 22px; height: 22px; stroke: #fff; }
+.hero-arrow:hover { background: rgba(255,255,255,0.35); transform: translateY(-50%) scale(1.08); }
+.hero-arrow--prev { left: 1.5rem; }
+.hero-arrow--next { right: 1.5rem; }
+/* Slider dots */
+.hero-slider-nav {
+  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  z-index: 5; display: flex; gap: 0.6rem;
+}
+.hero-dot {
+  width: 12px; height: 12px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.7);
+  background: transparent; cursor: pointer; padding: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+.hero-dot--active { background: #fff; border-color: #fff; }
+.hero-tagline {
+  font-family: var(--font-accent);
+  font-size: clamp(3.2rem, 6.5vw, 5.8rem);
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+}
+.hero-tagline span {
+  color: var(--butter);
+  -webkit-text-fill-color: var(--butter);
+  text-shadow: 0 4px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+}
+.hero-mini {
+  font-family: var(--font-secondary);
+  font-size: 1.35rem;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 2rem;
+  max-width: 480px;
+  line-height: 1.6;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.4), 0 1px 4px rgba(0,0,0,0.25);
+  font-weight: 400;
+}
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, var(--blush), #d4547a);
+  color: white;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-radius: 60px;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 40px rgba(227, 104, 136, 0.4);
+  border: none;
+  letter-spacing: 0.02em;
+}
+.btn-hero:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 50px rgba(227, 104, 136, 0.5);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+.scroll-indicator span {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+.scroll-line {
+  width: 1.5px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+  border-radius: 2px;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+@keyframes scroll-bounce {
+  0%, 100% { transform: scaleY(1); transform-origin: top; }
+  50% { transform: scaleY(0.5); transform-origin: top; }
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   ABOUT SECTION - MORE VISUAL
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.about {
+  background: var(--warm-white);
+  padding: 3rem 3rem;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-visual {
+  position: relative;
+}
+.about-image-main {
+  width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: center center;
+  height: 620px;
+  box-shadow: 0 30px 80px rgba(227, 104, 136, 0.15);
+}
+.about-image-float {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 220px;
+  height: 220px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 6px solid var(--warm-white);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+  z-index: 3;
+}
+.about-image-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.about-text { position: relative; z-index: 2; }
+.about-description {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--soft-text);
+  margin-bottom: 2.5rem;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.stat-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.8rem;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.04);
+  border: 1px solid rgba(227, 104, 136, 0.08);
+  transition: all 0.4s;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(227, 104, 136, 0.12);
+}
+.stat-number {
+  font-family: var(--font-primary);
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--blush), var(--tangerine));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+.stat-label {
+  font-size: 1.05rem;
+  color: var(--soft-text);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SPECIALTIES â€” IMAGE CARDS (NO DESCRIPTION TEXT)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.specialties {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
+  padding: 3rem 3rem;
+}
+.specialties-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.8rem;
+  max-width: 1340px;
+  margin: 0 auto;
+}
+.specialty-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  cursor: pointer;
+}
+.specialty-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+}
+.specialty-image-wrap {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.specialty-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.specialty-card:hover .specialty-image-wrap img {
+  transform: scale(1.08);
+}
+/* Gradient overlay on image */
+.specialty-image-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+  transition: opacity 0.4s;
+}
+.specialty-card-body {
+  padding: 1.3rem 1.5rem;
+  text-align: center;
+}
+.specialty-name {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--deep-text);
+}
+.specialty-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--blush);
+  transition: gap 0.3s;
+}
+.specialty-link:hover { gap: 0.8rem; }
+
+/* Color bar on top */
+.specialty-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 3;
+  transition: height 0.4s;
+}
+.specialty-card:nth-child(1)::before { background: linear-gradient(90deg, var(--tangerine), var(--butter)); }
+.specialty-card:nth-child(2)::before { background: linear-gradient(90deg, var(--blush), var(--tangerine)); }
+.specialty-card:nth-child(3)::before { background: linear-gradient(90deg, var(--sea), var(--blush)); }
+.specialty-card:nth-child(4)::before { background: linear-gradient(90deg, var(--matcha), var(--butter)); }
+.specialty-card:nth-child(5)::before { background: linear-gradient(90deg, var(--blush), var(--sea)); }
+.specialty-card:hover::before { height: 6px; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   DATA VISUALIZATION / SUCCESS METRICS
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.metrics {
+  background: linear-gradient(160deg, #1a3a5c 0%, #1e3050 40%, #1a2d48 100%);
+  color: white;
+  padding: 3rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.metrics::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(102,152,204,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(227,104,136,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(242,216,143,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.metrics .section-title { color: white; }
+.metrics .section-subtitle { color: rgba(255,255,255,0.6); }
+.metrics-header { text-align: center; margin-bottom: 2.5rem; position: relative; z-index: 2; }
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  max-width: 1340px;
+  margin: 0 auto 4rem;
+  position: relative;
+  z-index: 2;
+  align-items: stretch;
+}
+
+/* Achievements Panel */
+.achievements-panel {
+  background: rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 2.5rem 2.2rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.achievements-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+  line-height: 1.2;
+}
+.achievements-sub {
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+.achievements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+}
+.achievement-item {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px;
+  padding: 1.3rem 1.1rem;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+.achievement-item:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+.achievement-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+.achievement-value {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: white;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+.achievement-label {
+  font-family: var(--font-secondary);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+/* Donut Chart */
+.donut-section {
+  background: rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.donut-title {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.donut-container {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  justify-content: center;
+}
+.donut-chart {
+  width: 260px;
+  height: 260px;
+  position: relative;
+  flex-shrink: 0;
+}
+.donut-chart svg { transform: rotate(-90deg); width: 260px; height: 260px; }
+.donut-chart circle {
+  fill: none;
+  stroke-width: 24;
+  stroke-linecap: round;
+  transition: stroke-dasharray 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 120px;
+}
+.donut-center-value {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+.donut-center-label {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  margin-top: 0.2rem;
+}
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.legend-text {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+}
+.legend-value {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: white;
+  margin-left: auto;
+  font-size: 1.2rem;
+}
+
+/* Bar Chart */
+.bar-section {
+  background: rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bar-title {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  height: 240px;
+  padding-top: 1.5rem;
+}
+.bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+.bar-value {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255,255,255,0.9);
+}
+.bar-fill {
+  width: 100%;
+  border-radius: 12px 12px 4px 4px;
+  transition: height 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  min-width: 48px;
+  height: 0;
+}
+.bar-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+}
+.bar-year {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.8rem;
+  font-weight: 500;
+}
+
+/* Circular Progress */
+.progress-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.progress-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 24px;
+  padding: 2.5rem;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+.progress-circle {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+.progress-circle svg { transform: rotate(-90deg); }
+.progress-circle circle {
+  fill: none;
+  stroke-linecap: round;
+}
+.progress-circle .track { stroke: rgba(255,255,255,0.08); stroke-width: 10; }
+.progress-circle .fill-circle {
+  stroke-width: 10;
+  transition: stroke-dasharray 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.progress-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.progress-label {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PATIENT JOURNEY â€” VISUAL TIMELINE
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.journey {
+  background: linear-gradient(180deg, var(--warm-white), var(--cream));
+  padding: 3rem 3rem;
+}
+.journey-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.journey-header .section-subtitle { margin: 0 auto; }
+.journey-timeline {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.journey-line {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--tangerine), var(--blush), var(--sea), var(--matcha), var(--butter), var(--blush));
+  border-radius: 3px;
+  z-index: 0;
+}
+/* Carousel arrow buttons */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 24px rgba(34, 34, 34, 0.18), 0 2px 6px rgba(227, 104, 136, 0.15);
+  color: var(--blush, #E36888);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  backdrop-filter: blur(8px);
+}
+.scroll-arrow:hover {
+  background: linear-gradient(135deg, #E36888, #F08C21);
+  color: white;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 14px 32px rgba(227, 104, 136, 0.4);
+}
+.scroll-arrow svg { width: 22px; height: 22px; stroke-width: 2.4; }
+.scroll-arrow-left { left: 1.2rem; }
+.scroll-arrow-right { right: 1.2rem; }
+@media (max-width: 640px) {
+  .scroll-arrow { width: 42px; height: 42px; }
+  .scroll-arrow-left { left: 0.5rem; }
+  .scroll-arrow-right { right: 0.5rem; }
+}
+
+/* Infinite scroll journey */
+.journey-scroll-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+.journey-scroll-wrap:hover .journey-steps { animation-play-state: paused; }
+.journey-steps {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: journeyScroll 45s linear infinite;
+  padding: 2rem 0;
+}
+@keyframes journeyScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.journey-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+  width: 300px;
+}
+.journey-dot {
+  width: 280px;
+  height: 280px;
+  border-radius: 32px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 4px solid transparent;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(227, 104, 136, 0.12), 0 8px 20px rgba(0,0,0,0.06);
+}
+.journey-dot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.journey-step:nth-child(6n+1) .journey-dot { border-color: var(--tangerine); }
+.journey-step:nth-child(6n+2) .journey-dot { border-color: var(--blush); }
+.journey-step:nth-child(6n+3) .journey-dot { border-color: var(--sea); }
+.journey-step:nth-child(6n+4) .journey-dot { border-color: var(--matcha); }
+.journey-step:nth-child(6n+5) .journey-dot { border-color: var(--butter); }
+.journey-step:nth-child(6n) .journey-dot { border-color: var(--blush); }
+
+.journey-step:hover .journey-dot {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(227, 104, 136, 0.25);
+}
+.journey-step:hover .journey-dot img { transform: scale(1.08); }
+.journey-number {
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blush), var(--tangerine));
+  color: white;
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.journey-step-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--deep-text);
+}
+.journey-step-desc {
+  font-size: 0.95rem;
+  color: var(--soft-text);
+  line-height: 1.5;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   WHY CHOOSE US â€” IMAGE GRID
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.why-us {
+  background: var(--warm-white);
+  padding: 3rem 3rem;
+}
+.why-us-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.why-us-header .section-subtitle { margin: 0 auto; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.why-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+  position: relative;
+  animation: whyFloat 6s ease-in-out infinite;
+}
+.why-card:nth-child(1) { animation-delay: 0s; }
+.why-card:nth-child(2) { animation-delay: 0.5s; }
+.why-card:nth-child(3) { animation-delay: 1s; }
+.why-card:nth-child(4) { animation-delay: 1.5s; }
+.why-card:nth-child(5) { animation-delay: 2s; }
+.why-card:nth-child(6) { animation-delay: 2.5s; }
+@keyframes whyFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(227, 104, 136, 0) 0%, rgba(240, 140, 33, 0.08) 50%, rgba(227, 104, 136, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+.why-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.6) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+.why-card:hover {
+  transform: translateY(-14px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(227, 104, 136, 0.15), 0 10px 30px rgba(0,0,0,0.08);
+  animation-play-state: paused;
+}
+.why-card:hover::before { opacity: 1; }
+.why-card:hover::after { transform: translateX(100%); }
+.why-card-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+.why-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s;
+}
+.why-card:hover .why-card-image img {
+  transform: scale(1.12) rotate(-1deg);
+  filter: saturate(1.15);
+}
+.why-card-body {
+  padding: 1.8rem;
+  text-align: center;
+}
+.why-title {
+  font-family: var(--font-primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.why-desc {
+  font-size: 1.05rem;
+  color: var(--soft-text);
+  line-height: 1.6;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   DOCTORS
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.doctors {
+  background: linear-gradient(180deg, var(--cream), var(--warm-white));
+  padding: 3rem 3rem;
+}
+.doctors-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.doctors-header .section-subtitle { margin: 0 auto; }
+.doctors-scroll-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+.doctors-scroll-wrap:hover .doctors-grid { animation-play-state: paused; }
+.doctors-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+.doctors-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.6rem;
+  background: linear-gradient(135deg, var(--blush), var(--tangerine));
+  color: white;
+  border-radius: 999px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(227, 104, 136, 0.3);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.doctors-learn-more:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(227, 104, 136, 0.42);
+}
+.doctors-learn-more svg { transition: transform 0.35s; }
+.doctors-learn-more:hover svg { transform: translateX(4px); }
+.doctors-grid {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: doctorsScroll 60s linear infinite;
+  padding: 2rem 0;
+}
+@keyframes doctorsScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.doctor-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 280px;
+}
+.doctor-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 24px 60px rgba(227,104,136,0.18);
+}
+.doctor-avatar {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.doctor-avatar img {
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  transform: translateY(8%);
+}
+.doctor-avatar img.face-lower {
+  transform: translateY(14%);
+}
+.doctor-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: conic-gradient(var(--blush), var(--tangerine), var(--butter), var(--blush)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+}
+.doctor-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3rem;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.doctor-timing {
+  font-family: var(--font-secondary);
+  font-size: 0.82rem;
+  color: var(--soft-text);
+  background: rgba(227, 104, 136, 0.08);
+  padding: 0.55rem 0.8rem;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.35;
+  text-align: center;
+  width: 100%;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doctor-learn-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: auto;
+  align-self: center;
+  padding: 0.55rem 1.3rem;
+  background: transparent;
+  color: var(--blush);
+  border: 1.5px solid var(--blush);
+  border-radius: 8px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  margin-top: auto;
+}
+.doctor-learn-more svg { transition: transform 0.25s; }
+.doctor-learn-more:hover {
+  background: var(--blush);
+  color: white;
+}
+.doctor-learn-more:hover svg { transform: translateX(3px); }
+.doctor-spec {
+  font-size: 1rem;
+  color: var(--blush);
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doctor-exp {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doctor-stars {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.doctor-stars svg { width: 18px; height: 18px; }
+.doctor-btn {
+  padding: 0.7rem 1.8rem;
+  border: 2px solid var(--blush);
+  color: var(--blush);
+  background: transparent;
+  border-radius: 50px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.doctor-btn:hover {
+  background: var(--blush);
+  color: white;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TESTIMONIALS
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.testimonials {
+  background: var(--warm-white);
+  padding: 3rem 3rem;
+}
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.testimonials-header .section-subtitle { margin: 0 auto; }
+.testimonials-scroll-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+.testimonials-scroll-wrap:hover .testimonials-grid { animation-play-state: paused; }
+.testimonials-grid {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: testimonialsScroll 70s linear infinite;
+  padding: 2rem 0;
+}
+@keyframes testimonialsScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.testimonial-card {
+  border-radius: 20px;
+  padding: 0 0 1.6rem;
+  position: relative;
+  transition: all 0.4s;
+  border: 1px solid rgba(0,0,0,0.04);
+  flex-shrink: 0;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.testimonial-hero {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem auto 0;
+  background: linear-gradient(135deg, rgba(227,104,136,0.08), rgba(240,140,33,0.08));
+  box-shadow: 0 6px 18px rgba(227,104,136,0.18);
+}
+.testimonial-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.testimonial-card:hover .testimonial-hero img {
+  transform: scale(1.06);
+}
+.testimonial-identity {
+  padding: 1rem 1.6rem 0.2rem;
+  text-align: center;
+}
+.testimonial-body {
+  padding: 0 1.6rem;
+}
+.testimonial-card:nth-child(6n+1) { background: linear-gradient(135deg, #fff5f7, #fff9f2); }
+.testimonial-card:nth-child(6n+2) { background: linear-gradient(135deg, #f2f6fb, #fff5f7); }
+.testimonial-card:nth-child(6n+3) { background: linear-gradient(135deg, #f7f7ed, #f2f6fb); }
+.testimonial-card:nth-child(6n+4) { background: linear-gradient(135deg, #fff9f2, #f2f6fb); }
+.testimonial-card:nth-child(6n+5) { background: linear-gradient(135deg, #fff5f7, #f7f7ed); }
+.testimonial-card:nth-child(6n) { background: linear-gradient(135deg, #f2f6fb, #fff9f2); }
+.testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+.testimonial-quote {
+  font-family: var(--font-accent);
+  font-size: 2.3rem;
+  color: var(--blush);
+  opacity: 0.25;
+  line-height: 0.8;
+  margin: 0.3rem 0 0.1rem;
+  text-align: center;
+}
+.testimonial-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--soft-text);
+  font-style: italic;
+  text-align: center;
+  flex: 1;
+}
+.testimonial-stars svg { width: 18px; height: 18px; }
+.testimonial-name {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+}
+.testimonial-detail {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.1rem;
+}
+.testimonial-stars {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  margin: 0.6rem 0 0.7rem;
+}
+.testimonial-stars svg { width: 15px !important; height: 15px !important; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FACILITIES
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.facilities {
+  background: linear-gradient(180deg, var(--cream), var(--warm-white));
+  padding: 3rem 3rem;
+}
+.facilities-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.facilities-header .section-subtitle { margin: 0 auto; }
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 320px 320px;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.facility-card {
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.facility-card:hover { transform: scale(1.02); }
+.facility-card:nth-child(1) { grid-column: span 2; }
+.facility-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.facility-card:hover img {
+  transform: scale(1.05);
+}
+.facility-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 2rem 1.8rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+  color: white;
+}
+.facility-name {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.facility-tag {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-top: 0.3rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CONTACT
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.contact {
+  background: var(--warm-white);
+  padding: 3rem 3rem;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+/* Gradient info card (left) */
+.contact-info-gradient {
+  background: linear-gradient(160deg, var(--blush) 0%, var(--tangerine) 100%);
+  border-radius: 28px;
+  padding: 3.5rem 3rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-gradient-glow {
+  position: absolute;
+  top: -20%;
+  right: -15%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.contact-info-title {
+  font-family: var(--font-primary);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+.contact-info-desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+}
+.contact-info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-info-icon svg {
+  width: 22px;
+  height: 22px;
+}
+/* Form card (right) */
+.contact-form-wrap {
+  background: white;
+  border-radius: 28px;
+  padding: 3.5rem;
+  box-shadow: 0 12px 50px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.contact-form-title {
+  font-family: var(--font-primary);
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 0;
+}
+.form-group { margin-bottom: 1.4rem; }
+.form-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--deep-text);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 1.05rem 1.5rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 50px;
+  font-family: var(--font-secondary);
+  font-size: 1.05rem;
+  transition: all 0.3s;
+  background: #f7f7f7;
+  outline: none;
+  color: var(--deep-text);
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--blush);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(227,104,136,0.08);
+}
+.form-input::placeholder { color: #aaa; font-weight: 400; }
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-textarea { border-radius: 20px; }
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+  padding-right: 3rem;
+}
+.form-submit {
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, var(--blush), var(--tangerine));
+  color: white;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: 0 8px 30px rgba(227,104,136,0.3);
+  margin-top: 1rem;
+  letter-spacing: 0.02em;
+}
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(227,104,136,0.4);
+}
+
+/* (old contact-info styles removed â€” using gradient card now) */
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FOOTER
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.footer {
+  background: linear-gradient(135deg, #1a3a5c, #1e3050);
+  color: white;
+  padding: 5rem 3rem 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  max-width: 1340px;
+  margin: 0 auto 3rem;
+}
+.footer-brand .nav-logo { margin-bottom: 1rem; }
+.footer-brand .nav-logo-text .femme { color: white; }
+.footer-brand .nav-logo-text .femme span { color: var(--tangerine-light); }
+.footer-brand .nav-logo-text .hospital { color: rgba(255,255,255,0.6); }
+.footer-desc {
+  color: rgba(255,255,255,0.5);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.footer-social a:hover {
+  background: var(--blush);
+  transform: translateY(-3px);
+}
+.footer-social svg { width: 18px; height: 18px; fill: white; }
+.footer-col h4 {
+  font-family: var(--font-primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: white;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.6rem; }
+.footer-col a {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--butter); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1340px;
+  margin: 0 auto;
+}
+.footer-bottom p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.35);
+}
+.footer-accreditations {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.footer-accreditations span {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.3);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+@media (max-width: 1024px) {
+  html { font-size: 17px; }
+  .specialties-grid { grid-template-columns: repeat(3, 1fr); }
+  .metrics-row { grid-template-columns: 1fr; }
+  .achievements-grid { grid-template-columns: 1fr 1fr; }
+  .journey-step { width: 260px; }
+  .journey-dot { width: 240px; height: 240px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-image-float { position: static; width: 100%; height: 300px; border-radius: 24px; border: none; margin-top: 1.5rem; }
+}
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 360px;
+  height: 100vh;
+  background: var(--warm-white);
+  z-index: 999;
+  padding: 2rem 1.5rem;
+  transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow-y: auto;
+}
+.mobile-menu.active { right: 0; }
+.mobile-menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  font-size: 1.5rem;
+  color: var(--deep-text);
+}
+.mobile-menu-links {
+  list-style: none;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.mobile-menu-links li a {
+  display: block;
+  padding: 1rem 0;
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--deep-text);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: color 0.3s;
+}
+.mobile-menu-links li a:hover { color: var(--blush); }
+.mobile-menu-cta {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--blush), var(--tangerine));
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .nav-right { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .nav { padding: 0.9rem 1.75rem; min-height: 82px; }
+  .nav.scrolled { padding: 0.8rem 1.75rem; min-height: 76px; }
+  .nav-logo-img { height: 58px; }
+  .nav.scrolled .nav-logo-img { height: 58px; }
+  .nav.hero-nav .nav-logo-img { height: 58px; }
+  .hero { min-height: 640px; }
+  .hero-slide { padding-top: 90px; }
+  .hero-overlay { padding: 0 3rem; max-width: 680px; }
+  .hero-arrow { width: 40px; height: 40px; }
+  .hero-arrow--prev { left: 1rem; }
+  .hero-arrow--next { right: 1rem; }
+}
+@media (max-width: 768px) {
+  html { font-size: 16px; }
+  .nav { padding: 0.75rem 1.25rem; min-height: 72px; gap: 1rem; }
+  .nav.scrolled { padding: 0.65rem 1.25rem; min-height: 66px; }
+  .nav-logo-img { height: 52px; }
+  .nav.scrolled .nav-logo-img { height: 52px; }
+  .nav.hero-nav .nav-logo-img { height: 52px; }
+  .section { padding: 3rem 1.2rem; }
+  .hero { min-height: 600px; height: auto; }
+  .hero-slide { padding-top: 80px; }
+  .hero-overlay { padding: 0 1.5rem; max-width: 100%; }
+  .hero-tagline { font-size: clamp(2.6rem, 10vw, 3.6rem); margin-bottom: 1rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .hero-cta-row { flex-wrap: wrap; gap: 0.75rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-image-main { height: 320px; }
+  .specialties-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .why-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .doctor-card { width: 240px; padding: 1.5rem 1rem; }
+  .doctor-avatar { width: 140px; height: 140px; }
+  .journey-step { width: 240px; }
+  .journey-dot { width: 220px; height: 220px; border-radius: 24px; }
+  .journey-steps { gap: 1.5rem; }
+  .testimonial-card { width: 270px; padding: 0 0 1.4rem; }
+  .facilities-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 1rem; }
+  .facility-card:nth-child(1) { grid-column: auto; }
+  .facilities-grid .facility-card { height: 240px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .contact-info-gradient { padding: 2rem 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .progress-row { grid-template-columns: 1fr; max-width: 300px; }
+  .donut-container { flex-direction: column; }
+  .journey-steps { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .stats-row { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .quick-contacts { flex-wrap: wrap; }
+  .section-title { font-size: clamp(2rem, 7vw, 2.6rem); }
+  h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+}
+@media (max-width: 480px) {
+  html { font-size: 15px; }
+  .nav { padding: 0.65rem 1rem; min-height: 66px; }
+  .nav-logo-img { height: 46px; }
+  .nav.scrolled .nav-logo-img { height: 46px; }
+  .nav.hero-nav .nav-logo-img { height: 46px; }
+  .hero { min-height: 560px; }
+  .hero-slide { padding-top: 74px; }
+  .hero-overlay { padding: 0 1.25rem; }
+  .hero-tagline { font-size: clamp(2.2rem, 11vw, 2.9rem); line-height: 1.05; }
+  .hero-arrow { width: 34px; height: 34px; }
+  .hero-arrow--prev { left: 0.6rem; }
+  .hero-arrow--next { right: 0.6rem; }
+  .hero-arrow svg { width: 18px; height: 18px; }
+  .hero-slider-nav { bottom: 1.5rem; }
+  .specialties-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .doctor-card { width: 220px; }
+  .journey-step { width: 220px; }
+  .journey-dot { width: 200px; height: 200px; }
+  .section { padding: 2.5rem 1rem; }
+  .facilities-grid .facility-card { height: 220px; }
+  .nav-icon-link { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     NAVIGATION
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<nav class="nav hero-nav" id="nav">
+  <a href="#" class="nav-logo">
+    <img class="nav-logo-img" src="images/logo-hospital-cropped.png" alt="Femme Nest Hospital">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#specialties">Services</a></li>
+    <li><a href="#doctors">Doctor</a></li>
+    <li class="nav-dropdown">
+      <a href="#gallery" class="nav-dropdown-toggle">Gallery <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="#gallery">Events</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </li>
+    <li><a href="blogs.html">Blogs</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta">Book Appointment</a>
+  </div>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Floating Social Dock (bottom right) -->
+<div class="social-dock" aria-label="Quick contact">
+  <a href="tel:+919218072466" class="sd-call" title="Call Us" aria-label="Call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/919218072466" target="_blank" rel="noopener" class="sd-wa" title="WhatsApp" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a href="https://www.instagram.com/femmenesthospital/" target="_blank" rel="noopener" class="sd-ig" title="Instagram" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.26.07 1.64.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.26.06-1.64.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5.01-4.73.07-.99.05-1.53.21-1.88.35-.47.18-.81.4-1.16.75-.36.36-.57.69-.75 1.16-.14.36-.3.9-.35 1.88C3.07 9.5 3.05 9.85 3.05 13s.02 3.5.08 4.73c.05.99.21 1.53.35 1.88.18.47.4.81.75 1.16.36.36.69.57 1.16.75.36.14.9.3 1.88.35 1.23.06 1.58.08 4.73.08s3.5-.02 4.73-.08c.99-.05 1.53-.21 1.88-.35.47-.18.81-.4 1.16-.75.36-.36.57-.69.75-1.16.14-.36.3-.9.35-1.88.06-1.23.08-1.58.08-4.73s-.02-3.5-.08-4.73c-.05-.99-.21-1.53-.35-1.88a3.1 3.1 0 0 0-.75-1.16 3.1 3.1 0 0 0-1.16-.75c-.36-.14-.9-.3-1.88-.35C15.5 4.02 15.15 4 12 4zm0 3.07A4.93 4.93 0 1 1 12 17a4.93 4.93 0 0 1 0-9.86zm0 1.8a3.13 3.13 0 1 0 0 6.26 3.13 3.13 0 0 0 0-6.26zm5.13-2.1a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
+  </a>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileClose">&times;</button>
+  <ul class="mobile-menu-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#specialties">Services</a></li>
+    <li><a href="#doctors">Doctor</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="tel:+919218072466">Call Us</a></li>
+    <li><a href="https://wa.me/919218072466" target="_blank">WhatsApp</a></li>
+    <li><a href="https://www.instagram.com/femmenesthospital/" target="_blank">Instagram</a></li>
+  </ul>
+  <a href="#contact" class="mobile-menu-cta">Book Appointment</a>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     HERO â€” SLIDER
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="hero" id="hero">
+  <!-- Slide backgrounds -->
+  <div class="hero-slide hero-slide--active" data-slide="0">
+    <div class="hero-bg">
+      <img src="images/fn/pex-h3.jpg" alt="Femme Nest Hospital interior">
+    </div>
+    <div class="hero-overlay">
+      <h1 class="hero-tagline"><span>Boutique Hospital</span><br>for Women &amp; Child Care</h1>
+      <p class="hero-mini">Where every journey to motherhood begins with world-class care.</p>
+      <a href="#contact" class="btn-hero">
+        Book Consultation
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-slide" data-slide="1">
+    <div class="hero-bg">
+      <img src="images/fn/maternity-hero.jpg" alt="Maternity care at Femme Nest">
+    </div>
+    <div class="hero-overlay">
+      <h1 class="hero-tagline"><span>Nurturing Women,</span><br>Welcoming Life</h1>
+      <p class="hero-mini">Compassionate maternity care for every stage of your journey.</p>
+      <a href="#contact" class="btn-hero">
+        Book Consultation
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Slider controls -->
+  <div class="hero-slider-nav">
+    <button class="hero-dot hero-dot--active" data-goto="0" aria-label="Slide 1"></button>
+    <button class="hero-dot" data-goto="1" aria-label="Slide 2"></button>
+  </div>
+  <button class="hero-arrow hero-arrow--prev" aria-label="Previous slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="hero-arrow hero-arrow--next" aria-label="Next slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     ABOUT SECTION
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="about section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <img class="about-image-main" src="images/fn/about-hero-family.jpg" alt="Happy family at Femme Nest Hospital">
+        <div class="about-image-float"><img src="images/fn/about-small-newborn.jpg" alt="Newborn care at Femme Nest"></div>
+      </div>
+      <div class="about-text">
+        <span class="section-label reveal">About Us</span>
+        <h2 class="section-title reveal reveal-delay-1">Nurturing Life,<br>Empowering Women</h2>
+        <p class="about-description reveal reveal-delay-2">Our state-of-the-art facility combines cutting-edge medical technology with a warm, nurturing environment. From fertility treatments to postnatal care, your comfort and well-being come first.</p>
+        <div class="stats-row reveal reveal-delay-3">
+          <div class="stat-card">
+            <div class="stat-number" data-target="100" data-suffix="+">0</div>
+            <div class="stat-label">Deliveries</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="20" data-suffix="+">0</div>
+            <div class="stat-label">Consultants</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="70" data-suffix="%">0</div>
+            <div class="stat-label">IVF Success Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Emergency Care</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     SPECIALTIES â€” IMAGE-FOCUSED CARDS
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="specialties section" id="specialties">
+  <div class="container">
+    <div class="specialties-header">
+      <span class="section-label reveal">Our Centre of Excellence</span>
+    </div>
+    <div class="specialties-grid">
+      <!-- Maternity -->
+      <div class="specialty-card reveal">
+        <div class="specialty-image-wrap">
+          <img src="images/fn/maternity-indian-mom.jpg" alt="Maternity and prenatal care at Femme Nest">
+        </div>
+        <div class="specialty-card-body">
+          <h3 class="specialty-name">Maternity</h3>
+          <a href="/expertise/maternity" class="specialty-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <!-- Gynaecology -->
+      <div class="specialty-card reveal reveal-delay-1">
+        <div class="specialty-image-wrap">
+          <img src="images/fn/gynae-new.png" alt="Gynaecology and women's health">
+        </div>
+        <div class="specialty-card-body">
+          <h3 class="specialty-name">Gynaecology</h3>
+          <a href="/expertise/gynecology" class="specialty-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <!-- Infertility -->
+      <div class="specialty-card reveal reveal-delay-2">
+        <div class="specialty-image-wrap">
+          <img src="images/fn/infertility.webp" alt="Infertility and IVF care for Indian families">
+        </div>
+        <div class="specialty-card-body">
+          <h3 class="specialty-name">Infertility</h3>
+          <a href="/expertise/infertility" class="specialty-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <!-- Neonatology & Pediatrics -->
+      <div class="specialty-card reveal reveal-delay-3">
+        <div class="specialty-image-wrap">
+          <img src="images/fn/nicu.webp" alt="Neonatology, NICU and pediatric care">
+        </div>
+        <div class="specialty-card-body">
+          <h3 class="specialty-name">Neonatology & Pediatrics</h3>
+          <a href="/expertise/neonatology" class="specialty-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <!-- Fetal Medicine -->
+      <div class="specialty-card reveal reveal-delay-4">
+        <div class="specialty-image-wrap">
+          <img src="images/fn/real-fetal.jpg" alt="Fetal medicine and prenatal ultrasound for Indian families">
+        </div>
+        <div class="specialty-card-body">
+          <h3 class="specialty-name">Fetal Medicine</h3>
+          <a href="/expertise/fetal-medicine" class="specialty-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     DOCTORS
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="doctors section" id="doctors">
+  <div class="container">
+    <div class="doctors-header">
+      <span class="section-label reveal">Find a Doctor</span>
+      <h2 class="section-title reveal reveal-delay-1">Our experienced clinical specialists</h2>
+    </div>
+    <div class="doctors-scroll-wrap reveal">
+      <button class="scroll-arrow scroll-arrow-left" data-carousel="doctors" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="scroll-arrow scroll-arrow-right" data-carousel="doctors" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+      <div class="doctors-grid" id="doctorsGrid">
+        <!-- Doctor cards injected by JS for both original + duplicate -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     PATIENT JOURNEY
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="journey section" id="journey">
+  <div class="container">
+    <div class="journey-header">
+      <span class="section-label reveal">Your Journey</span>
+      <h2 class="section-title reveal reveal-delay-1">Every Step, Together</h2>
+    </div>
+    <div class="journey-scroll-wrap reveal">
+      <button class="scroll-arrow scroll-arrow-left" data-carousel="journey" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="scroll-arrow scroll-arrow-right" data-carousel="journey" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+      <div class="journey-steps">
+        <div class="journey-step">
+          <div class="journey-dot">
+            <img src="images/fn/consultation-new.jpg" alt="Consultation">
+          </div>
+          <div class="journey-step-title">Consultation</div>
+          <div class="journey-step-desc">Free initial specialist visit</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-dot">
+            <img src="images/fn/pex-diagnosis.jpg" alt="Diagnosis - comprehensive evaluation for Indian mothers">
+          </div>
+          <div class="journey-step-title">Diagnosis</div>
+          <div class="journey-step-desc">Comprehensive evaluation</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-dot">
+            <img src="images/fn/care-plan-clipboard.jpg" alt="Personalized maternity care plan">
+          </div>
+          <div class="journey-step-title">Care Plan</div>
+          <div class="journey-step-desc">Personalized for you</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-dot">
+            <img src="images/fn/real-treatment.jpg" alt="Treatment - world-class intervention at Femme Nest">
+          </div>
+          <div class="journey-step-title">Treatment</div>
+          <div class="journey-step-desc">World-class intervention</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-dot">
+            <img src="images/fn/real-delivery.jpg" alt="Safe and joyful delivery - Indian couple celebrating newborn">
+          </div>
+          <div class="journey-step-title">Delivery</div>
+          <div class="journey-step-desc">Safe & joyful birthing</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-dot">
+            <img src="images/fn/recovery-new.png" alt="Recovery">
+          </div>
+          <div class="journey-step-title">Recovery</div>
+          <div class="journey-step-desc">Postnatal support</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-dot">
+            <img src="images/fn/pex-indian-dad-baby.jpg" alt="Going Home - Indian mother with baby">
+          </div>
+          <div class="journey-step-title">Home</div>
+          <div class="journey-step-desc">Happy family begins</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-dot">
+            <img src="images/fn/pex-followup.jpg" alt="Follow-up">
+          </div>
+          <div class="journey-step-title">Follow-up</div>
+          <div class="journey-step-desc">Lifelong wellbeing</div>
+        </div>
+        <!-- Duplicate set for seamless infinite scroll -->
+        <div class="journey-step" aria-hidden="true">
+          <div class="journey-dot">
+            <img src="images/fn/consultation-new.jpg" alt="">
+          </div>
+          <div class="journey-step-title">Consultation</div>
+          <div class="journey-step-desc">Free initial specialist visit</div>
+        </div>
+        <div class="journey-step" aria-hidden="true">
+          <div class="journey-dot">
+            <img src="images/fn/pex-diagnosis.jpg" alt="">
+          </div>
+          <div class="journey-step-title">Diagnosis</div>
+          <div class="journey-step-desc">Comprehensive evaluation</div>
+        </div>
+        <div class="journey-step" aria-hidden="true">
+          <div class="journey-dot">
+            <img src="images/fn/care-plan-clipboard.jpg" alt="">
+          </div>
+          <div class="journey-step-title">Care Plan</div>
+          <div class="journey-step-desc">Personalized for you</div>
+        </div>
+        <div class="journey-step" aria-hidden="true">
+          <div class="journey-dot">
+            <img src="images/fn/real-treatment.jpg" alt="">
+          </div>
+          <div class="journey-step-title">Treatment</div>
+          <div class="journey-step-desc">World-class intervention</div>
+        </div>
+        <div class="journey-step" aria-hidden="true">
+          <div class="journey-dot">
+            <img src="images/fn/real-delivery.jpg" alt="">
+          </div>
+          <div class="journey-step-title">Delivery</div>
+          <div class="journey-step-desc">Safe & joyful birthing</div>
+        </div>
+        <div class="journey-step" aria-hidden="true">
+          <div class="journey-dot">
+            <img src="images/fn/recovery-new.png" alt="">
+          </div>
+          <div class="journey-step-title">Recovery</div>
+          <div class="journey-step-desc">Postnatal support</div>
+        </div>
+        <div class="journey-step" aria-hidden="true">
+          <div class="journey-dot">
+            <img src="images/fn/pex-indian-dad-baby.jpg" alt="">
+          </div>
+          <div class="journey-step-title">Home</div>
+          <div class="journey-step-desc">Happy family begins</div>
+        </div>
+        <div class="journey-step" aria-hidden="true">
+          <div class="journey-dot">
+            <img src="images/fn/pex-followup.jpg" alt="">
+          </div>
+          <div class="journey-step-title">Follow-up</div>
+          <div class="journey-step-desc">Lifelong wellbeing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     TESTIMONIALS
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="testimonials section" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="section-label reveal">Stories of Hope</span>
+      <h2 class="section-title reveal reveal-delay-1">What Our Families Say</h2>
+    </div>
+    <div class="testimonials-scroll-wrap reveal">
+      <button class="scroll-arrow scroll-arrow-left" data-carousel="testimonials" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="scroll-arrow scroll-arrow-right" data-carousel="testimonials" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- Testimonial cards injected by JS for seamless loop -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     CONTACT
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="contact section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Left: Gradient info card -->
+      <div class="contact-info-gradient reveal">
+        <div class="contact-gradient-glow"></div>
+        <h2 class="contact-info-title">Begin Your Journey With Us</h2>
+        <p class="contact-info-desc">Connect with our expert care team. Your first step toward a safe and joyful pregnancy journey starts here.</p>
+        <div class="contact-info-items">
+          <div class="contact-info-item">
+            <a href="tel:+919218072466" style="display:flex;align-items:center;gap:1rem;color:white;text-decoration:none;">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <span>092180 72466</span>
+            </a>
+          </div>
+          <div class="contact-info-item">
+            <a href="https://wa.me/919218072466" target="_blank" style="display:flex;align-items:center;gap:1rem;color:white;text-decoration:none;">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <span>WhatsApp Us</span>
+            </a>
+          </div>
+          <div class="contact-info-item">
+            <a href="mailto:femmenesthospital@gmail.com" style="display:flex;align-items:center;gap:1rem;color:white;text-decoration:none;">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <span>femmenesthospital@gmail.com</span>
+            </a>
+          </div>
+          <div class="contact-info-item">
+            <a href="https://www.google.com/maps/search/?api=1&query=Femme+Nest+Hospital+A-16+Pushpanjali+Vikas+Marg+Delhi+110092" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:1rem;color:white;text-decoration:none;">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <span style="font-size:1.1rem;font-weight:600;letter-spacing:0.02em;">A-16, Pushpanjali, Vikas Marg, Delhi, 110092 <span style="display:block;font-size:0.78em;font-weight:500;opacity:0.85;margin-top:0.2rem;text-decoration:underline;">View on Google Maps -&gt;</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Form -->
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <h2 class="contact-form-title">Request Appointment</h2>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" placeholder="+91 98765 43210">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Select Specialist</label>
+            <select class="form-select">
+              <option>Select Specialist</option>
+              <option>Infertility & IVF Specialist</option>
+              <option>Obstetrician (Maternity)</option>
+              <option>Gynecologist</option>
+              <option>Neonatologist</option>
+              <option>Fetal Medicine Expert</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Preferred Date</label>
+              <input type="date" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Time</label>
+              <input type="time" class="form-input">
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Book Appointment &nbsp;&rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     MAP / LOCATION
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="map-section" id="location">
+  <div class="container">
+    <div class="map-header">
+      <span class="section-label reveal">Visit Us</span>
+      <h2 class="section-title reveal reveal-delay-1">Find Us on the Map</h2>
+      <p class="map-sub reveal reveal-delay-2" style="font-size:1.2rem;font-weight:600;color:var(--deep-text);opacity:1;">A-16, Pushpanjali, Vikas Marg, Delhi, 110092</p>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe
+        src="https://www.google.com/maps?q=Femme+Nest+Hospital+A-16+Pushpanjali+Vikas+Marg+Delhi+110092&output=embed"
+        width="100%" height="460" style="border:0;"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Femme Nest Hospital Location">
+      </iframe>
+      <a href="https://www.google.com/maps/search/?api=1&query=Femme+Nest+Hospital+A-16+Pushpanjali+Vikas+Marg+Delhi+110092"
+         target="_blank" rel="noopener" class="map-cta">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Get Directions
+      </a>
+    </div>
+  </div>
+</section>
+
+<!--  FOOTER  -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">
+        <img class="nav-logo-img footer-logo" src="images/logo-hospital-cropped.png" alt="Femme Nest Hospital">
+      </a>
+      <p class="footer-desc">Where every journey to motherhood is nurtured with compassion, expertise, and world-class care.</p>
+      <p class="footer-desc" style="font-size:1rem;margin-top:0.5rem;opacity:0.9;font-weight:600;letter-spacing:0.02em;">A-16, Pushpanjali, Vikas Marg, Delhi, 110092</p>
+      <div style="display:flex;gap:1rem;margin-top:0.8rem;flex-wrap:wrap;">
+        <a href="tel:+919218072466" style="display:flex;align-items:center;gap:0.4rem;color:white;font-size:0.95rem;opacity:0.85;text-decoration:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          092180 72466
+        </a>
+        <a href="https://wa.me/919218072466" target="_blank" style="display:flex;align-items:center;gap:0.4rem;color:#25D366;font-size:0.95rem;text-decoration:none;">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="footer-social" style="margin-top:1rem;">
+        <a href="https://www.facebook.com/femmenestivfcentre" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/femmenesthospital/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.26.07 1.64.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.26.06-1.64.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5.01-4.73.07-.99.05-1.53.21-1.88.35-.47.18-.81.4-1.16.75-.36.36-.57.69-.75 1.16-.14.36-.3.9-.35 1.88C3.07 9.5 3.05 9.85 3.05 13s.02 3.5.08 4.73c.05.99.21 1.53.35 1.88.18.47.4.81.75 1.16.36.36.69.57 1.16.75.36.14.9.3 1.88.35 1.23.06 1.58.08 4.73.08s3.5-.02 4.73-.08c.99-.05 1.53-.21 1.88-.35.47-.18.81-.4 1.16-.75.36-.36.57-.69.75-1.16.14-.36.3-.9.35-1.88.06-1.23.08-1.58.08-4.73s-.02-3.5-.08-4.73c-.05-.99-.21-1.53-.35-1.88a3.1 3.1 0 0 0-.75-1.16 3.1 3.1 0 0 0-1.16-.75c-.36-.14-.9-.3-1.88-.35C15.5 4.02 15.15 4 12 4zm0 3.07A4.93 4.93 0 1 1 12 17a4.93 4.93 0 0 1 0-9.86zm0 1.8a3.13 3.13 0 1 0 0 6.26 3.13 3.13 0 0 0 0-6.26zm5.13-2.1a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg></a>
+        <a href="https://www.youtube.com/@femmenestclinic" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.11-2.12C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.39.58A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.11 2.12c1.89.58 9.39.58 9.39.58s7.5 0 9.39-.58a3 3 0 0 0 2.11-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.75 15.5v-7L15.82 12l-6.07 3.5z"/></svg></a>
+        <a href="https://www.linkedin.com/company/femmenest-clinic/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/expertise/infertility">IVF Treatment</a></li>
+        <li><a href="/expertise/maternity">Maternity Care</a></li>
+        <li><a href="/expertise/gynecology">Gynaecology</a></li>
+        <li><a href="/expertise/neonatology">Neonatology & Pediatrics</a></li>
+        <li><a href="/expertise/fetal-medicine">Fetal Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hospital</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Doctors</a></li>
+        <li><a href="#">Facilities</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Book Appointment</a></li>
+        <li><a href="#">Patient Portal</a></li>
+        <li><a href="#">Insurance</a></li>
+        <li><a href="#">Health Blog</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Femme Nest Hospital. All rights reserved.</p>
+    <div class="footer-accreditations">
+      <span>NABH Accredited</span>
+      <span>ISO 9001:2015</span>
+      <span>JCI Certified</span>
+    </div>
+  </div>
+</footer>
+
+<!--JAVASCRIPT -->
+<script>
+// â”€â”€ Hero Slider
+(function(){
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  const prevBtn = document.querySelector('.hero-arrow--prev');
+  const nextBtn = document.querySelector('.hero-arrow--next');
+  let current = 0, total = slides.length, timer: any;
+
+  var sliding = false;
+  function goTo(n: number){
+    n = (n + total) % total;
+    if(n === current || sliding) return;
+    sliding = true;
+    var prev = current;
+    current = n;
+
+    // Position new slide off-screen right, no transition
+    const currentSlide = slides[current] as HTMLElement;
+    const prevSlide = slides[prev] as HTMLElement;
+    currentSlide.classList.remove('hero-slide--exit','sliding');
+    currentSlide.style.transform = 'translateX(100%)';
+    void currentSlide.offsetWidth; // single reflow
+
+    // Add transition class to both, then animate
+    prevSlide.classList.add('sliding');
+    currentSlide.classList.add('sliding');
+
+    // Animate: old â†’ left, new â†’ center
+    prevSlide.classList.remove('hero-slide--active');
+    prevSlide.classList.add('hero-slide--exit');
+    currentSlide.style.transform = '';
+    currentSlide.classList.add('hero-slide--active');
+
+    dots[prev].classList.remove('hero-dot--active');
+    dots[current].classList.add('hero-dot--active');
+
+    // Cleanup after transition ends
+    setTimeout(function(){
+      prevSlide.classList.remove('hero-slide--exit','sliding');
+      currentSlide.classList.remove('sliding');
+      sliding = false;
+    }, 1050);
+    resetTimer();
+  }
+  document.querySelectorAll('.scroll-arrow').forEach(btn => {
+    const btnEl = btn as HTMLElement;
+    btnEl.addEventListener('click', () => {
+      const key = btnEl.dataset.carousel;
+      const dir = parseInt(btnEl.dataset.dir || '1', 10);
+      const t = targets[key as keyof typeof targets];
+      if (!t || !t.el || t.tweening) return;
+      tween(t, dir);
+    });
+  });
+})();
+
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle') as HTMLElement;
+const mobileMenu = document.getElementById('mobileMenu') as HTMLElement;
+const mobileOverlay = document.getElementById('mobileOverlay') as HTMLElement;
+const mobileClose = document.getElementById('mobileClose') as HTMLElement;
+function openMobile() { mobileMenu.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow='hidden'; }
+function closeMobile() { mobileMenu.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow=''; }
+mobileToggle.addEventListener('click', openMobile);
+mobileClose.addEventListener('click', closeMobile);
+mobileOverlay.addEventListener('click', closeMobile);
+document.querySelectorAll('.mobile-menu-links a, .mobile-menu-cta').forEach(a => a.addEventListener('click', closeMobile));
+
+// Navigation scroll effect
+const nav = document.getElementById('nav') as HTMLElement;
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  if (st > 100) {
+    nav.classList.add('scrolled');
+    nav.classList.remove('hero-nav');
+  } else {
+    nav.classList.remove('scrolled');
+    nav.classList.add('hero-nav');
+  }
+  lastScroll = st;
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => revealObserver.observe(el));
+
+// Stat counter animation
+const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target as HTMLElement;
+      const target = parseInt(el.dataset.target || '0');
+      const suffix = el.dataset.suffix || '';
+      const duration = 2000;
+      const start = performance.now();
+
+      function animate(now: number) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * target);
+        el.textContent = current.toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+statNumbers.forEach(el => counterObserver.observe(el));
+
+// Charts animation
+const chartObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Bar chart
+      entry.target.querySelectorAll('.bar-fill').forEach(bar => {
+        const barEl = bar as HTMLElement;
+        setTimeout(() => { barEl.style.height = barEl.dataset.height || '0'; }, 300);
+      });
+      // Donut chart
+      entry.target.querySelectorAll('.donut-segment').forEach(seg => {
+        const segEl = seg as HTMLElement;
+        const target = parseFloat(segEl.dataset.target || '0');
+        const offset = parseFloat(segEl.dataset.offset || '0');
+        setTimeout(() => {
+          segEl.style.strokeDasharray = `${target} ${628 - target}`;
+          segEl.style.strokeDashoffset = `-${offset}`;
+        }, 400);
+      });
+      // Progress circles
+      entry.target.querySelectorAll('.fill-circle').forEach(circle => {
+        const circleEl = circle as HTMLElement;
+        const target = parseFloat(circleEl.dataset.target || '0');
+        setTimeout(() => {
+          circleEl.style.strokeDasharray = `${target} 364`;
+        }, 500);
+      });
+      // Achievement count-up
+      entry.target.querySelectorAll('.achievement-value[data-count]').forEach(el => {
+        const elEl = el as HTMLElement;
+        const target = parseFloat(elEl.dataset.count || '0');
+        const suffix = elEl.dataset.suffix || '';
+        const decimals = parseInt(elEl.dataset.decimal || '0');
+        const duration = 1800;
+        const startTime = performance.now();
+        const tick = (now: number) => {
+          const p = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const val = target * eased;
+          el.textContent = (decimals > 0 ? val.toFixed(decimals) : Math.floor(val).toLocaleString()) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = (decimals > 0 ? target.toFixed(decimals) : target.toLocaleString()) + suffix;
+        };
+        requestAnimationFrame(tick);
+      });
+      chartObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.metrics').forEach(el => chartObserver.observe(el));
+
+// Populate Our Team grid (12 specialists from Femme Nest Hospital)
+const doctors = [
+  { name: 'Dr. Sowjanya Aggarwal', spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Sat - By Appointment',          img: 'images/fn/dr-sowjanya-aggarwal.webp' },
+  { name: 'Dr. Anita Aggarwal',    spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Thu & Sat - 4:00 - 6:00 PM',    img: 'images/fn/dr-anita-aggarwal.webp' },
+  { name: 'Dr. Anita Jain',        spec: 'Obstetrician & Gynaecologist', opd: 'Monday - 1:00 - 3:00 PM',             img: 'images/fn/dr-anita-jain.webp' },
+  { name: 'Dr. Apoorva Reddy',     spec: 'Obstetrician & Gynaecologist', opd: 'Tue - Sat - 10:00 AM - 12:00 PM',     img: 'images/fn/dr-apoorva-reddy.webp' },
+  { name: 'Dr. Dipti Nabh',        spec: 'Obstetrician & Gynaecologist', opd: 'Mon / Wed / Fri - 6:00 - 7:00 PM',    img: 'images/fn/dr-dipti-nabh.webp' },
+  { name: 'Dr. Pooja Prasad',      spec: 'Obstetrician & Gynaecologist', opd: 'Mon & Thu - 9:00 - 11:00 AM',         img: 'images/fn/dr-pooja-prasad.webp' },
+  { name: 'Dr. Ragini Gupta',      spec: 'Obstetrician & Gynaecologist', opd: 'Tue / Thu / Sat - 11:00 AM - 1:00 PM',img: 'images/fn/dr-ragini-gupta.webp' },
+  { name: 'Dr. Rakhi Rawat',       spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Sat - 11:00 AM - 1:00 PM',      img: 'images/fn/dr-rakhi-rawat.webp' },
+  { name: 'Dr. Reena Mehra',       spec: 'Obstetrician & Gynaecologist', opd: 'Mon / Wed / Fri - 11:00 AM - 1:00 PM',img: 'images/fn/dr-reena-mehra.webp' },
+  { name: 'Dr. Rekha Sarin',       spec: 'Obstetrician & Gynaecologist', opd: 'Tue / Thu / Sat - 6:00 - 8:00 PM',    img: 'images/fn/dr-rekha-sarin.webp' },
+  { name: 'Dr. Rupali Gupta',      spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Sat - 3:00 - 5:00 PM',          img: 'images/fn/dr-rupali-gupta.webp' },
+  { name: 'Dr. Sangeeta Goel',     spec: 'Obstetrician & Gynaecologist', opd: 'Tue - Sat - 9:00 - 11:00 AM',         img: 'images/fn/dr-sangeeta-goel.webp' },
+];
+const star = '<svg viewBox="0 0 24 24" fill="#F2D88F"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+function getAstroScopeAttr(el: Element | null): string {
+  if (!el) return '';
+  const attr = Array.from(el.attributes).find((a: Attr) => a.name.startsWith('data-astro-cid-'));
+  return attr ? attr.name : '';
+}
+function applyAstroScope(node: Element | null, scopeAttr: string): void {
+  if (!scopeAttr || !node) return;
+  (node as HTMLElement).setAttribute(scopeAttr, '');
+  node.querySelectorAll('*').forEach((child: Element) => (child as HTMLElement).setAttribute(scopeAttr, ''));
+}
+function htmlToNode(html: string): HTMLElement {
+  const template = document.createElement('template');
+  template.innerHTML = html.trim();
+  return template.content.firstElementChild as HTMLElement;
+}
+function doctorImg(d: any): string {
+  if (d.img) return `<img src="${d.img}" alt="${d.name}">`;
+  // Demo placeholder via ui-avatars â€” elegant initials on brand gradient
+  const name = encodeURIComponent(d.name.replace('Dr. ', ''));
+  const colors = ['E36888', 'F08C21', '6698CC', 'B4B534'];
+  const bg = colors[Math.abs(d.name.length) % colors.length];
+  return `<img src="https://ui-avatars.com/api/?name=${name}&background=${bg}&color=ffffff&size=340&bold=true&font-size=0.38&format=png" alt="${d.name}">`;
+}
+function doctorCard(d: any, idx: number, hidden: boolean = false): string {
+  return `<div class="doctor-card"${hidden ? ' aria-hidden="true"' : ''}>
+    <div class="doctor-avatar">${doctorImg(d)}<div class="doctor-ring"></div></div>
+    <div class="doctor-name">${d.name}</div>
+    <div class="doctor-spec">${d.spec}</div>
+    <div class="doctor-stars">${star.repeat(5)}</div>
+    <div class="doctor-timing">${d.opd}</div>
+    <a href="doctor.html?id=${idx}" class="doctor-learn-more">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>`;
+}
+const grid = document.getElementById('doctorsGrid');
+if (grid) {
+  const scopeAttr = getAstroScopeAttr(grid);
+  const cardsHtml = doctors.map((d, i) => doctorCard(d, i)).concat(doctors.map((d, i) => doctorCard(d, i, true)));
+  if (scopeAttr) {
+    const fragment = document.createDocumentFragment();
+    cardsHtml.forEach((html) => {
+      const node = htmlToNode(html);
+      if (node) {
+        applyAstroScope(node, scopeAttr);
+        fragment.appendChild(node);
+      }
+    });
+    grid.replaceChildren(fragment);
+  } else {
+    grid.innerHTML = cardsHtml.join('');
+  }
+}
+
+// Stories of Hope â€” testimonials from Femme Nest Hospital patients
+const testimonials = [
+  {
+    name: 'Riya Malhotra',
+    detail: 'Maternity, 2024',
+    initial: 'R',
+    color: 'E36888',
+    text: "My pregnancy journey with Femme Nest couldn't have been better. From the very first consultation, the doctors made me feel heard and cared for. The labour room team was incredibly calm and supportive -- I felt safe at every single step."
+  },
+  {
+    name: 'Shruti Arora',
+    detail: 'High-Risk Delivery, 2024',
+    initial: 'S',
+    color: 'F08C21',
+    text: "In my ninth month, I faced unexpected complications, but the Femme Nest team handled everything with precision and empathy. They made a scary moment feel manageable. Today I hold my healthy baby because of them."
+  },
+  {
+    name: 'Neha Bansal',
+    detail: 'First-Time Mother, 2024',
+    initial: 'N',
+    color: '6698CC',
+    text: "As a first-time mother, I was anxious about everything. The maternity staff at Femme Nest made me feel confident -- they were patient, warm and explained every step. The hospital truly feels like a second home."
+  },
+  {
+    name: 'Pooja Mehta',
+    detail: 'NICU Parent, 2023',
+    initial: 'P',
+    color: 'B4B534',
+    text: "My baby needed NICU support right after birth and I was heartbroken. But the NICU doctors and nurses treated him with such expertise and tenderness. They kept me informed and held my hand through the hardest days of my life."
+  },
+  {
+    name: 'Ankita Verma',
+    detail: 'Maternity, 2024',
+    initial: 'A',
+    color: 'E36888',
+    text: "My experience at Femme Nest didn't just feel medical -- it felt personal. Every nurse remembered my name, every doctor took time to listen. This is the kind of care every Indian mother deserves."
+  },
+  {
+    name: 'Sakshi Khurana',
+    detail: 'Maternity Suite, 2023',
+    initial: 'S',
+    color: 'F08C21',
+    text: "From admission to discharge, everything was beautifully managed. The luxury suite, the food, the round-the-clock nursing -- it felt peaceful and memorable. I'll always be grateful to Femme Nest for giving my baby a calm welcome into the world."
+  },
+  {
+    name: 'Kavita Sharma',
+    detail: 'IVF Success, 2024',
+    initial: 'K',
+    color: '6698CC',
+    text: "After years of trying, we had almost lost hope. The fertility team at Femme Nest stood by us through every cycle with patience and positivity. Today our daughter is six months old -- Femme Nest gave us our family."
+  },
+  {
+    name: 'Meenal Chopra',
+    detail: 'Gynaecology, 2024',
+    initial: 'M',
+    color: 'B4B534',
+    text: "I consulted Dr. Sowjanya for a long-standing issue that other doctors had dismissed. She listened carefully, explained everything in detail and created a treatment plan that actually worked. I feel like a different person now."
+  },
+  {
+    name: 'Divya Kapoor',
+    detail: 'C-Section Delivery, 2024',
+    initial: 'D',
+    color: 'E36888',
+    text: "My C-section was planned because of a medical reason and I was terrified. The entire OT team reassured me, held my hand and talked me through every moment. My recovery was smooth and my baby was in the best hands."
+  },
+  {
+    name: 'Ritika Sethi',
+    detail: 'Normal Delivery, 2023',
+    initial: 'R',
+    color: 'F08C21',
+    text: "I wanted a natural birth and the midwives at Femme Nest supported my choice completely. They coached me through every contraction and celebrated with me when my son arrived. It was the most empowering day of my life."
+  },
+  {
+    name: 'Tanvi Goyal',
+    detail: 'Prenatal Care, 2024',
+    initial: 'T',
+    color: '6698CC',
+    text: "Every check-up felt like meeting family. The staff knew my name, remembered my last visit and genuinely cared about how I was feeling. You don't get this kind of warmth in big corporate hospitals."
+  },
+  {
+    name: 'Priya Saxena',
+    detail: 'High-Risk Pregnancy, 2023',
+    initial: 'P',
+    color: 'B4B534',
+    text: "I had gestational diabetes and was considered high-risk. Dr. Anita monitored me closely for nine months with complete dedication. The attention to detail and the kindness I received is something I'll remember forever."
+  },
+  {
+    name: 'Smita Rao',
+    detail: 'NICU Parent, 2024',
+    initial: 'S',
+    color: 'E36888',
+    text: "Our twins were born premature and needed NICU care for three weeks. The doctors called us every day with updates and the nurses treated our babies like their own. We walked out of Femme Nest with two healthy children and endless gratitude."
+  }
+];
+const starSvg = '<svg viewBox="0 0 24 24" fill="#F2D88F"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+function testimonialHero(t: any): string {
+  const n = encodeURIComponent(t.name);
+  return `<img src="https://ui-avatars.com/api/?name=${n}&background=${t.color}&color=ffffff&size=520&bold=true&font-size=0.42&format=png" alt="${t.name}">`;
+}
+function testimonialCard(t: any, hidden: boolean = false): string {
+  return `<div class="testimonial-card"${hidden ? ' aria-hidden="true"' : ''}>
+    <div class="testimonial-hero">${testimonialHero(t)}</div>
+    <div class="testimonial-identity">
+      <div class="testimonial-name">${t.name}</div>
+      <div class="testimonial-detail">${t.detail}</div>
+      <div class="testimonial-stars">${starSvg.repeat(5)}</div>
+    </div>
+    <div class="testimonial-body">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">${t.text}</p>
+    </div>
+  </div>`;
+}
+const tGrid = document.getElementById('testimonialsGrid');
+if (tGrid) {
+  const scopeAttr = getAstroScopeAttr(tGrid);
+  const cardsHtml = testimonials.map((t) => testimonialCard(t)).concat(testimonials.map((t) => testimonialCard(t, true)));
+  if (scopeAttr) {
+    const fragment = document.createDocumentFragment();
+    cardsHtml.forEach((html) => {
+      const node = htmlToNode(html);
+      if (node) {
+        applyAstroScope(node, scopeAttr);
+        fragment.appendChild(node);
+      }
+    });
+    tGrid.replaceChildren(fragment);
+  } else {
+    tGrid.innerHTML = cardsHtml.join('');
+  }
+}
+
+// Carousel arrow controls â€” smoothly tween the underlying CSS animation's currentTime
+(function(){
+  const targets = {
+    journey: { el: document.querySelector('.journey-steps'), step: 5000, tweening: false },
+    doctors: { el: document.querySelector('.doctors-grid'), step: 6000, tweening: false },
+    testimonials: { el: document.querySelector('.testimonials-grid'), step: 7000, tweening: false }
+  };
+  const TWEEN_MS = 650;
+  // easeInOutCubic â€” smooth acceleration and deceleration
+  const ease = (x: number): number => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+
+  function tween(t: any, dir: any) {
+    const anims = t.el.getAnimations ? t.el.getAnimations() : [];
+    if (!anims.length) {
+      t.el.parentElement.scrollBy({ left: dir * 320, behavior: 'smooth' });
+      return;
+    }
+    const a = anims[0];
+    const dur = (a.effect && a.effect.getTiming().duration) || 60000;
+    const startCT = Number(a.currentTime) || 0;
+    const delta = dir * t.step;
+    // Pause the running infinite loop during the manual tween so motion is clean
+    const wasPlaying = a.playState === 'running';
+    if (wasPlaying) a.pause();
+    const startWall = performance.now();
+    t.tweening = true;
+
+    function frame(now: number) {
+      const p = Math.min(1, (now - startWall) / TWEEN_MS);
+      const eased = ease(p);
+      let ct = startCT + delta * eased;
+      // wrap within [0, dur)
+      ct = ((ct % dur) + dur) % dur;
+      a.currentTime = ct;
+      if (p < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        t.tweening = false;
+        if (wasPlaying) a.play();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  document.querySelectorAll('.scroll-arrow').forEach(btn => {
+    const btnEl = btn as HTMLElement;
+    btnEl.addEventListener('click', () => {
+      const key = btnEl.dataset.carousel;
+      const dir = parseInt(btnEl.dataset.dir || '1', 10);
+      const t = targets[key as keyof typeof targets];
+      if (!t || !t.el || t.tweening) return;
+      tween(t, dir);
+    });
+  });
+})();
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const href = a.getAttribute('href');
+    if (!href) return;
+    const target = document.querySelector(href);
+    if (target) (target as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
+
+
+

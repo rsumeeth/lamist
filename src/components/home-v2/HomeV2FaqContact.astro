@@ -1,0 +1,164 @@
+---
+import { homeV2Faqs } from '../../data/homepageV2Content';
+---
+
+<section class="home-v2-cta section reveal" aria-label="Appointment call to action">
+  <div class="container cta-wrap">
+    <div>
+      <p class="section-tag">Start Today</p>
+      <h2 class="section-title">Plan Your Consultation with Femme Nest Hospital</h2>
+      <p class="cta-copy">
+        Get personalized guidance for pregnancy, fertility, and gynecology care from our East Delhi specialists.
+      </p>
+    </div>
+    <a href="#contact" class="btn-white">Book an Appointment</a>
+  </div>
+</section>
+
+<section class="home-v2-faq-contact section reveal" id="contact">
+  <div class="container faq-contact-grid">
+    <div>
+      <p class="section-tag">FAQs</p>
+      <h2 class="section-title">Common Questions</h2>
+      <div class="faq-list">
+        {homeV2Faqs.map((faq) => (
+          <details>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h3>Book an Appointment</h3>
+      <form class="contact-form" action="#" method="post">
+        <label>
+          Full Name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Phone Number
+          <input type="tel" name="phone" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" />
+        </label>
+        <label>
+          Care Requirement
+          <textarea name="message" rows="4" placeholder="Pregnancy care, gynecology, fertility consultation..."></textarea>
+        </label>
+        <button type="submit" class="btn-rose">Submit Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    max-width: 1260px;
+    margin: 0 auto;
+  }
+
+  .home-v2-cta {
+    background: linear-gradient(120deg, #e84c8a 0%, #f4846a 100%);
+    color: #fff;
+  }
+
+  .cta-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .cta-wrap .section-tag,
+  .cta-wrap .section-title,
+  .cta-copy {
+    color: #fff;
+  }
+
+  .cta-copy {
+    margin-top: 12px;
+    max-width: 58ch;
+  }
+
+  .faq-contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 20px;
+  }
+
+  .faq-list {
+    margin-top: 18px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .faq-list details {
+    border: 1px solid rgba(26, 26, 46, 0.12);
+    border-radius: 12px;
+    background: #fff;
+    padding: 12px 14px;
+  }
+
+  .faq-list summary {
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .faq-list p {
+    margin-top: 10px;
+    color: #645f68;
+  }
+
+  .contact-card {
+    background: #fff;
+    border: 1px solid rgba(26, 26, 46, 0.12);
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .contact-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    margin-bottom: 12px;
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 10px;
+  }
+
+  .contact-form label {
+    display: grid;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: #5f5b62;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    border: 1px solid rgba(26, 26, 46, 0.18);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font: inherit;
+  }
+
+  .contact-form button {
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 940px) {
+    .cta-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .faq-contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
