@@ -119,7 +119,7 @@ SEO + performance implemented
 Homepage title set exactly to:
 Femme Nest Hospital | Best Maternity Centre & Pregnancy Care in East Delhi
 Description/keywords/OG/Twitter/canonical updated.
-LCP image (/images/fn/infertility.webp) is local, eager, high-priority, and preloaded.
+LCP image (/images/fn/ivf_2.png) is local, eager, high-priority, and preloaded.
 FAQPage JSON-LD added on homepage.
 Below-the-fold images are lazy-loaded.
 Validation
@@ -242,7 +242,7 @@ Kept required homepage SEO while preserving reference visuals:
 Exact title: Femme Nest Hospital | Best Maternity Centre & Pregnancy Care in East Delhi
 Added description, keywords, canonical, OG, Twitter tags
 Added JSON-LD (Hospital/MedicalClinic/LocalBusiness + FAQPage)
-Added preload for /images/fn/infertility.webp
+Added preload for /images/fn/ivf_2.png
 Validation done
 npm run build passes successfully.
 Verified generated dist/index.html includes:

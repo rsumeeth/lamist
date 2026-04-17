@@ -35,7 +35,7 @@ export const homeV2Meta = {
   keywords:
     'Femme Nest Hospital, best maternity centre East Delhi, pregnancy care East Delhi, maternity hospital East Delhi, women health East Delhi, gynecology clinic East Delhi',
   canonical: 'https://www.femmenest.com/',
-  ogImage: '/images/fn/infertility.webp',
+  ogImage: '/images/fn/ivf_2.png',
 };
 
 export const homeV2Stats: HomeStat[] = [
@@ -67,7 +67,7 @@ export const homeV2Services: HomeService[] = [
   {
     title: 'Neonatal & NICU Support',
     description: 'Specialized neonatal monitoring and NICU support for high-risk newborn care needs.',
-    image: '/images/fn/nicu.webp',
+    image: '/images/fn/ped_2.jpeg',
     alt: 'Neonatal intensive care support at hospital',
   },
 ];
