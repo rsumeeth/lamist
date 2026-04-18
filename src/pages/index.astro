@@ -108,8 +108,8 @@ button { cursor: pointer; border: none; font-family: inherit; }
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 2px 40px rgba(227, 104, 136, 0.08);
-  padding: 1rem 3rem;
-  min-height: 90px;
+  padding: 0.9rem 2rem;
+  min-height: auto;
 }
 .nav-logo {
   display: flex;
@@ -118,16 +118,16 @@ button { cursor: pointer; border: none; font-family: inherit; }
 }
 /* Logo image */
 .nav-logo-img {
-  height: 78px;
+  height: 62px;
   width: auto;
   object-fit: contain;
   flex-shrink: 0;
 }
-.nav.scrolled .nav-logo-img { height: 78px; }
+.nav.scrolled .nav-logo-img { height: 62px; }
 /* On hero â€” keep same as normal nav (solid header) */
 .nav.hero-nav .nav-logo-img {
   filter: none;
-  height: 78px;
+  height: 62px;
 }
 /* Footer logo â€” bright on dark bg */
 .footer-logo {
@@ -674,54 +674,76 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
   50% { transform: scaleY(0.5); transform-origin: top; }
 }
 
-/*   
+/*
    ABOUT SECTION - MORE VISUAL
       */
 .about {
   background: var(--warm-white);
   padding: 3rem 3rem;
 }
-.about-grid {
+.wcu-header { text-align: center; margin-bottom: 2.5rem; }
+.wcu-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
-  align-items: center;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: start;
 }
-.about-visual {
+.wcu-gallery-slider {
   position: relative;
-}
-.about-image-main {
   width: 100%;
-  border-radius: 30px;
-  object-fit: cover;
-  object-position: center center;
-  height: 620px;
-  box-shadow: 0 30px 80px rgba(227, 104, 136, 0.15);
-}
-.about-image-float {
-  position: absolute;
-  bottom: -30px;
-  right: -30px;
-  width: 220px;
-  height: 220px;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  border: 6px solid var(--warm-white);
-  box-shadow: 0 15px 50px rgba(0,0,0,0.12);
-  z-index: 3;
+  box-shadow: 0 15px 50px rgba(45,31,26,0.1);
 }
-.about-image-float img {
+.wcu-gallery-slider img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4/3;
   object-fit: cover;
-  object-position: center center;
+  display: none;
+  border-radius: 20px;
 }
-.about-text { position: relative; z-index: 2; }
-.about-description {
-  font-size: 1.3rem;
-  line-height: 1.8;
-  color: var(--soft-text);
-  margin-bottom: 2.5rem;
+.wcu-gallery-slider img.gal-active { display: block; }
+.wcu-gal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: background 0.25s, transform 0.25s;
+  z-index: 2;
+}
+.wcu-gal-arrow:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
+.wcu-gal-arrow--prev { left: 12px; }
+.wcu-gal-arrow--next { right: 12px; }
+.wcu-gal-arrow svg { width: 20px; height: 20px; stroke: var(--deep-text); }
+.wcu-gal-counter {
+  position: absolute; bottom: 12px; right: 16px;
+  background: rgba(0,0,0,0.5); color: #fff; padding: 0.3rem 0.75rem;
+  border-radius: 999px; font-family: var(--font-secondary); font-size: 0.8rem;
+  font-weight: 600;
+}
+.wcu-stats { display: flex; flex-direction: column; gap: 1rem; }
+.stat-asterisk {
+  color: var(--blush);
+  font-size: 0.75rem;
+  vertical-align: super;
+  margin-left: 2px;
+}
+.stat-tnc {
+  font-family: var(--font-secondary);
+  font-size: 0.78rem;
+  color: #8a7a72;
+  text-align: center;
+  margin-top: 0.25rem;
+  font-style: italic;
 }
 
 .stats-row {
@@ -1167,7 +1189,7 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
 }
 
 /*   
-   PATIENT JOURNEY â€” VISUAL TIMELINE
+  PATIENT JOURNEY â€” VIDEO
       */
 .journey {
   background: linear-gradient(180deg, var(--warm-white), var(--cream));
@@ -1178,20 +1200,18 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
   margin-bottom: 5rem;
 }
 .journey-header .section-subtitle { margin: 0 auto; }
-.journey-timeline {
-  max-width: 1100px;
+.jy-video-wrap {
+  max-width: 800px;
   margin: 0 auto;
   position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(227,104,136,0.12), 0 8px 24px rgba(0,0,0,0.06);
+  background: #000;
 }
-.journey-line {
-  position: absolute;
-  top: 65px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--tangerine), var(--blush), var(--sea), var(--matcha), var(--butter), var(--blush));
-  border-radius: 3px;
-  z-index: 0;
+.jy-video-wrap video {
+  width: 100%;
+  display: block;
 }
 /* Carousel arrow buttons */
 .scroll-arrow {
@@ -1227,93 +1247,8 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
   .scroll-arrow-left { left: 0.5rem; }
   .scroll-arrow-right { right: 0.5rem; }
 }
-
-/* Infinite scroll journey */
-.journey-scroll-wrap {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
-}
-.journey-scroll-wrap:hover .journey-steps { animation-play-state: paused; }
-.journey-steps {
-  display: flex;
-  gap: 2.5rem;
-  width: max-content;
-  animation: journeyScroll 45s linear infinite;
-  padding: 2rem 0;
-}
-@keyframes journeyScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.journey-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  flex-shrink: 0;
-  width: 300px;
-}
-.journey-dot {
-  width: 280px;
-  height: 280px;
-  border-radius: 32px;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  border: 4px solid transparent;
-  position: relative;
-  box-shadow: 0 20px 50px rgba(227, 104, 136, 0.12), 0 8px 20px rgba(0,0,0,0.06);
-}
-.journey-dot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.journey-step:nth-child(6n+1) .journey-dot { border-color: var(--tangerine); }
-.journey-step:nth-child(6n+2) .journey-dot { border-color: var(--blush); }
-.journey-step:nth-child(6n+3) .journey-dot { border-color: var(--sea); }
-.journey-step:nth-child(6n+4) .journey-dot { border-color: var(--matcha); }
-.journey-step:nth-child(6n+5) .journey-dot { border-color: var(--butter); }
-.journey-step:nth-child(6n) .journey-dot { border-color: var(--blush); }
-
-.journey-step:hover .journey-dot {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 70px rgba(227, 104, 136, 0.25);
-}
-.journey-step:hover .journey-dot img { transform: scale(1.08); }
-.journey-number {
-  position: absolute;
-  top: -8px;
-  right: -5px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--blush), var(--tangerine));
-  color: white;
-  font-family: var(--font-primary);
-  font-size: 0.8rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-}
-.journey-step-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-bottom: 0.4rem;
-  color: var(--deep-text);
-}
-.journey-step-desc {
-  font-size: 0.95rem;
-  color: var(--soft-text);
-  line-height: 1.5;
+@media (max-width: 700px) {
+  .jy-video-wrap { border-radius: 18px; max-width: 100%; }
 }
 
 /*   
@@ -2047,8 +1982,6 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
   .specialties-grid { grid-template-columns: repeat(3, 1fr); }
   .metrics-row { grid-template-columns: 1fr; }
   .achievements-grid { grid-template-columns: 1fr 1fr; }
-  .journey-step { width: 260px; }
-  .journey-dot { width: 240px; height: 240px; }
   .about-grid { grid-template-columns: 1fr; }
   .about-image-float { position: static; width: 100%; height: 300px; border-radius: 24px; border: none; margin-top: 1.5rem; }
 }
@@ -2121,9 +2054,9 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
   .nav-mobile-toggle { display: flex; }
   .nav { padding: 0.9rem 1.75rem; min-height: 82px; }
   .nav.scrolled { padding: 0.8rem 1.75rem; min-height: 76px; }
-  .nav-logo-img { height: 58px; }
-  .nav.scrolled .nav-logo-img { height: 58px; }
-  .nav.hero-nav .nav-logo-img { height: 58px; }
+  .nav-logo-img { height: 56px; }
+  .nav.scrolled .nav-logo-img { height: 56px; }
+  .nav.hero-nav .nav-logo-img { height: 56px; }
   .hero { min-height: 640px; }
   .hero-slide { padding-top: 90px; }
   .hero-overlay { padding: 0 3rem; max-width: 680px; }
@@ -2135,9 +2068,9 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
   html { font-size: 16px; }
   .nav { padding: 0.75rem 1.25rem; min-height: 72px; gap: 1rem; }
   .nav.scrolled { padding: 0.65rem 1.25rem; min-height: 66px; }
-  .nav-logo-img { height: 52px; }
-  .nav.scrolled .nav-logo-img { height: 52px; }
-  .nav.hero-nav .nav-logo-img { height: 52px; }
+  .nav-logo-img { height: 50px; }
+  .nav.scrolled .nav-logo-img { height: 50px; }
+  .nav.hero-nav .nav-logo-img { height: 50px; }
   .section { padding: 3rem 1.2rem; }
   .hero { min-height: 600px; height: auto; }
   .hero-slide { padding-top: 80px; }
@@ -2151,9 +2084,6 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
   .why-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .doctor-card { width: 240px; padding: 1.5rem 1rem; }
   .doctor-avatar { width: 140px; height: 140px; }
-  .journey-step { width: 240px; }
-  .journey-dot { width: 220px; height: 220px; border-radius: 24px; }
-  .journey-steps { gap: 1.5rem; }
   .testimonial-card { width: 270px; padding: 0 0 1.4rem; }
   .facilities-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 1rem; }
   .facility-card:nth-child(1) { grid-column: auto; }
@@ -2163,7 +2093,6 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .progress-row { grid-template-columns: 1fr; max-width: 300px; }
   .donut-container { flex-direction: column; }
-  .journey-steps { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .form-row { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
   .stats-row { grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -2174,9 +2103,9 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
 @media (max-width: 480px) {
   html { font-size: 15px; }
   .nav { padding: 0.65rem 1rem; min-height: 66px; }
-  .nav-logo-img { height: 46px; }
-  .nav.scrolled .nav-logo-img { height: 46px; }
-  .nav.hero-nav .nav-logo-img { height: 46px; }
+  .nav-logo-img { height: 44px; }
+  .nav.scrolled .nav-logo-img { height: 44px; }
+  .nav.hero-nav .nav-logo-img { height: 44px; }
   .hero { min-height: 560px; }
   .hero-slide { padding-top: 74px; }
   .hero-overlay { padding: 0 1.25rem; }
@@ -2191,8 +2120,6 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
   .stats-row { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .doctor-card { width: 220px; }
-  .journey-step { width: 220px; }
-  .journey-dot { width: 200px; height: 200px; }
   .section { padding: 2.5rem 1rem; }
   .facilities-grid .facility-card { height: 220px; }
   .nav-icon-link { display: none; }
@@ -2209,18 +2136,18 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
     <img class="nav-logo-img" src="images/logo-hospital-cropped.png" alt="Femme Nest Hospital">
   </a>
   <ul class="nav-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="#specialties">Services</a></li>
-    <li><a href="#doctors">Doctor</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/#specialties">Services</a></li>
+    <li><a href="/doctors">Doctor</a></li>
+    <li><a href="/gallery">Gallery</a></li>
     <li class="nav-dropdown">
-      <a href="#gallery" class="nav-dropdown-toggle">Gallery <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <a href="/special-packages/vaccination" class="nav-dropdown-toggle">Special Packages <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
       <ul class="nav-dropdown-menu">
-        <li><a href="#gallery">Events</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="/special-packages/vaccination">Vaccination</a></li>
       </ul>
     </li>
-    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="/blogs">Blogs</a></li>
   </ul>
   <div class="nav-right">
     <a href="#contact" class="nav-cta">Book Appointment</a>
@@ -2248,12 +2175,13 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-close" id="mobileClose">&times;</button>
   <ul class="mobile-menu-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="#specialties">Services</a></li>
-    <li><a href="#doctors">Doctor</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/#specialties">Services</a></li>
+    <li><a href="/doctors">Doctor</a></li>
+    <li><a href="/gallery">Gallery</a></li>
+    <li><a href="/special-packages/vaccination">Vaccination Package</a></li>
+    <li><a href="/blogs">Blogs</a></li>
     <li><a href="tel:+919218072466">Call Us</a></li>
     <li><a href="https://wa.me/919218072466" target="_blank">WhatsApp</a></li>
     <li><a href="https://www.instagram.com/femmenesthospital/" target="_blank">Instagram</a></li>
@@ -2316,16 +2244,33 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
         -->
 <section class="about section" id="about">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-visual reveal">
-        <img class="about-image-main" src="images/fn/about-hero-family.jpg" alt="Happy family at Femme Nest Hospital">
-        <div class="about-image-float"><img src="images/fn/about-small-newborn.jpg" alt="Newborn care at Femme Nest"></div>
+    <div class="wcu-header">
+      <span class="section-label reveal">Why Choose Us</span>
+    </div>
+    <div class="wcu-grid">
+      <div class="wcu-gallery reveal">
+        <div class="wcu-gallery-slider" id="wcuSlider">
+          <img src="images/fn/interior-1.jpeg" alt="Femme Nest Hospital interior" class="gal-active">
+          <img src="images/fn/interior-2.jpeg" alt="Femme Nest Hospital lounge">
+          <img src="images/fn/interior-3.jpeg" alt="Femme Nest Hospital suite">
+          <img src="images/fn/interior-4.jpeg" alt="Femme Nest Hospital hallway">
+          <img src="images/fn/interior-5.jpeg" alt="Femme Nest Hospital corridor">
+          <img src="images/fn/interior-6.jpeg" alt="Femme Nest Hospital lobby">
+          <img src="images/fn/interior-7.jpeg" alt="Femme Nest Hospital room">
+          <img src="images/fn/interior-8.jpeg" alt="Femme Nest Hospital ward">
+          <img src="images/fn/interior-9.jpeg" alt="Femme Nest Hospital nursery">
+          <img src="images/fn/interior-10.jpeg" alt="Femme Nest Hospital facility">
+          <img src="images/fn/interior-11.jpeg" alt="Femme Nest Hospital clinic">
+          <img src="images/fn/interior-12.jpeg" alt="Femme Nest Hospital reception">
+          <img src="images/fn/interior-13.jpeg" alt="Femme Nest Hospital entrance">
+          <img src="images/fn/interior-14.jpeg" alt="Femme Nest Hospital ward">
+          <button class="wcu-gal-arrow wcu-gal-arrow--prev" onclick="galSlide(-1)" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="wcu-gal-arrow wcu-gal-arrow--next" onclick="galSlide(1)" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <span class="wcu-gal-counter" id="galCounter">1 / 14</span>
+        </div>
       </div>
-      <div class="about-text">
-        <span class="section-label reveal">About Us</span>
-        <h2 class="section-title reveal reveal-delay-1">Nurturing Life,<br>Empowering Women</h2>
-        <p class="about-description reveal reveal-delay-2">Our state-of-the-art facility combines cutting-edge medical technology with a warm, nurturing environment. From fertility treatments to postnatal care, your comfort and well-being come first.</p>
-        <div class="stats-row reveal reveal-delay-3">
+      <div class="wcu-stats reveal reveal-delay-1">
+        <div class="stats-row">
           <div class="stat-card">
             <div class="stat-number" data-target="100" data-suffix="+">0</div>
             <div class="stat-label">Deliveries</div>
@@ -2335,14 +2280,19 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
             <div class="stat-label">Consultants</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" data-target="70" data-suffix="%">0</div>
-            <div class="stat-label">IVF Success Rate</div>
+            <div class="stat-number" data-target="70" data-suffix="%*">0</div>
+            <div class="stat-label">IVF Success Rate<span class="stat-asterisk">*</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4.7<span style="font-size:0.55em;">&#9733;</span></div>
+            <div class="stat-label">Google Rating</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">24/7</div>
             <div class="stat-label">Emergency Care</div>
           </div>
         </div>
+        <p class="stat-tnc">*Terms and conditions apply</p>
       </div>
     </div>
   </div>
@@ -2367,13 +2317,13 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
           <a href="/expertise/maternity" class="specialty-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
-      <!-- Gynaecology -->
+      <!-- Gynecology -->
       <div class="specialty-card reveal reveal-delay-1">
         <div class="specialty-image-wrap">
-          <img src="images/fn/gynacology-1.png" alt="Gynaecology and women's health">
+          <img src="images/fn/gynacology-1.png" alt="Gynecology and women's health">
         </div>
         <div class="specialty-card-body">
-          <h3 class="specialty-name">Gynaecology</h3>
+          <h3 class="specialty-name">Gynecology</h3>
           <a href="/expertise/gynecology" class="specialty-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
@@ -2439,124 +2389,11 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
       <span class="section-label reveal">Your Journey</span>
       <h2 class="section-title reveal reveal-delay-1">Every Step, Together</h2>
     </div>
-    <div class="journey-scroll-wrap reveal">
-      <button class="scroll-arrow scroll-arrow-left" data-carousel="journey" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-      <button class="scroll-arrow scroll-arrow-right" data-carousel="journey" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-      <div class="journey-steps">
-        <div class="journey-step">
-          <div class="journey-dot">
-            <img src="images/fn/consultation-new.jpg" alt="Consultation">
-          </div>
-          <div class="journey-step-title">Consultation</div>
-          <div class="journey-step-desc">Free initial specialist visit</div>
-        </div>
-        <div class="journey-step">
-          <div class="journey-dot">
-            <img src="images/fn/pex-diagnosis.jpg" alt="Diagnosis - comprehensive evaluation for Indian mothers">
-          </div>
-          <div class="journey-step-title">Diagnosis</div>
-          <div class="journey-step-desc">Comprehensive evaluation</div>
-        </div>
-        <div class="journey-step">
-          <div class="journey-dot">
-            <img src="images/fn/care-plan-clipboard.jpg" alt="Personalized maternity care plan">
-          </div>
-          <div class="journey-step-title">Care Plan</div>
-          <div class="journey-step-desc">Personalized for you</div>
-        </div>
-        <div class="journey-step">
-          <div class="journey-dot">
-            <img src="images/fn/real-treatment.jpg" alt="Treatment - world-class intervention at Femme Nest">
-          </div>
-          <div class="journey-step-title">Treatment</div>
-          <div class="journey-step-desc">World-class intervention</div>
-        </div>
-        <div class="journey-step">
-          <div class="journey-dot">
-            <img src="images/fn/real-delivery.jpg" alt="Safe and joyful delivery - Indian couple celebrating newborn">
-          </div>
-          <div class="journey-step-title">Delivery</div>
-          <div class="journey-step-desc">Safe & joyful birthing</div>
-        </div>
-        <div class="journey-step">
-          <div class="journey-dot">
-            <img src="images/fn/recovery-new.png" alt="Recovery">
-          </div>
-          <div class="journey-step-title">Recovery</div>
-          <div class="journey-step-desc">Postnatal support</div>
-        </div>
-        <div class="journey-step">
-          <div class="journey-dot">
-            <img src="images/fn/pex-indian-dad-baby.jpg" alt="Going Home - Indian mother with baby">
-          </div>
-          <div class="journey-step-title">Home</div>
-          <div class="journey-step-desc">Happy family begins</div>
-        </div>
-        <div class="journey-step">
-          <div class="journey-dot">
-            <img src="images/fn/pex-followup.jpg" alt="Follow-up">
-          </div>
-          <div class="journey-step-title">Follow-up</div>
-          <div class="journey-step-desc">Lifelong wellbeing</div>
-        </div>
-        <!-- Duplicate set for seamless infinite scroll -->
-        <div class="journey-step" aria-hidden="true">
-          <div class="journey-dot">
-            <img src="images/fn/consultation-new.jpg" alt="">
-          </div>
-          <div class="journey-step-title">Consultation</div>
-          <div class="journey-step-desc">Free initial specialist visit</div>
-        </div>
-        <div class="journey-step" aria-hidden="true">
-          <div class="journey-dot">
-            <img src="images/fn/pex-diagnosis.jpg" alt="">
-          </div>
-          <div class="journey-step-title">Diagnosis</div>
-          <div class="journey-step-desc">Comprehensive evaluation</div>
-        </div>
-        <div class="journey-step" aria-hidden="true">
-          <div class="journey-dot">
-            <img src="images/fn/care-plan-clipboard.jpg" alt="">
-          </div>
-          <div class="journey-step-title">Care Plan</div>
-          <div class="journey-step-desc">Personalized for you</div>
-        </div>
-        <div class="journey-step" aria-hidden="true">
-          <div class="journey-dot">
-            <img src="images/fn/real-treatment.jpg" alt="">
-          </div>
-          <div class="journey-step-title">Treatment</div>
-          <div class="journey-step-desc">World-class intervention</div>
-        </div>
-        <div class="journey-step" aria-hidden="true">
-          <div class="journey-dot">
-            <img src="images/fn/real-delivery.jpg" alt="">
-          </div>
-          <div class="journey-step-title">Delivery</div>
-          <div class="journey-step-desc">Safe & joyful birthing</div>
-        </div>
-        <div class="journey-step" aria-hidden="true">
-          <div class="journey-dot">
-            <img src="images/fn/recovery-new.png" alt="">
-          </div>
-          <div class="journey-step-title">Recovery</div>
-          <div class="journey-step-desc">Postnatal support</div>
-        </div>
-        <div class="journey-step" aria-hidden="true">
-          <div class="journey-dot">
-            <img src="images/fn/pex-indian-dad-baby.jpg" alt="">
-          </div>
-          <div class="journey-step-title">Home</div>
-          <div class="journey-step-desc">Happy family begins</div>
-        </div>
-        <div class="journey-step" aria-hidden="true">
-          <div class="journey-dot">
-            <img src="images/fn/pex-followup.jpg" alt="">
-          </div>
-          <div class="journey-step-title">Follow-up</div>
-          <div class="journey-step-desc">Lifelong wellbeing</div>
-        </div>
-      </div>
+    <div class="jy-video-wrap reveal">
+      <video autoplay muted loop playsinline>
+        <source src="images/fn/fetal-journey.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </section>
@@ -2726,7 +2563,7 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
       <ul>
         <li><a href="/expertise/infertility">IVF Treatment</a></li>
         <li><a href="/expertise/maternity">Maternity Care</a></li>
-        <li><a href="/expertise/gynecology">Gynaecology</a></li>
+        <li><a href="/expertise/gynecology">Gynecology</a></li>
         <li><a href="/expertise/neonatology">Neonatology & Pediatrics</a></li>
         <li><a href="/expertise/fetal-medicine">Fetal Medicine</a></li>
       </ul>
@@ -2766,23 +2603,47 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
 <script>
 // â”€â”€ Hero Slider
 (function(){
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots = document.querySelectorAll('.hero-dot');
-  const prevBtn = document.querySelector('.hero-arrow--prev');
-  const nextBtn = document.querySelector('.hero-arrow--next');
-  let current = 0, total = slides.length, timer: any;
+  const heroRoot = document.querySelector('.hero') as HTMLElement | null;
+  if (!heroRoot || heroRoot.dataset.heroSliderInit === 'true') return;
+  heroRoot.dataset.heroSliderInit = 'true';
 
-  var sliding = false;
+  const slides = Array.from(document.querySelectorAll('.hero-slide')) as HTMLElement[];
+  const dots = Array.from(document.querySelectorAll('.hero-dot')) as HTMLElement[];
+  const prevBtn = document.querySelector('.hero-arrow--prev') as HTMLElement | null;
+  const nextBtn = document.querySelector('.hero-arrow--next') as HTMLElement | null;
+  const total = slides.length;
+  if (total === 0) return;
+
+  let current = 0;
+  let timer: ReturnType<typeof setInterval> | undefined;
+  let sliding = false;
+  const AUTO_MS = 6500;
+
+  function setActiveDot(index: number){
+    dots.forEach((dot, i) => dot.classList.toggle('hero-dot--active', i === index));
+  }
+
+  function startTimer(){
+    if (total <= 1) return;
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), AUTO_MS);
+  }
+
+  function resetTimer(){
+    if (timer) clearInterval(timer);
+    startTimer();
+  }
+
   function goTo(n: number){
     n = (n + total) % total;
     if(n === current || sliding) return;
     sliding = true;
-    var prev = current;
+    const prev = current;
     current = n;
 
     // Position new slide off-screen right, no transition
-    const currentSlide = slides[current] as HTMLElement;
-    const prevSlide = slides[prev] as HTMLElement;
+    const currentSlide = slides[current];
+    const prevSlide = slides[prev];
     currentSlide.classList.remove('hero-slide--exit','sliding');
     currentSlide.style.transform = 'translateX(100%)';
     void currentSlide.offsetWidth; // single reflow
@@ -2797,8 +2658,7 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
     currentSlide.style.transform = '';
     currentSlide.classList.add('hero-slide--active');
 
-    dots[prev].classList.remove('hero-dot--active');
-    dots[current].classList.add('hero-dot--active');
+    setActiveDot(current);
 
     // Cleanup after transition ends
     setTimeout(function(){
@@ -2808,16 +2668,18 @@ h1, h2, h3, .about-title, .hero-subtitle-main {
     }, 1050);
     resetTimer();
   }
-  document.querySelectorAll('.scroll-arrow').forEach(btn => {
-    const btnEl = btn as HTMLElement;
-    btnEl.addEventListener('click', () => {
-      const key = btnEl.dataset.carousel;
-      const dir = parseInt(btnEl.dataset.dir || '1', 10);
-      const t = targets[key as keyof typeof targets];
-      if (!t || !t.el || t.tweening) return;
-      tween(t, dir);
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const target = parseInt(dot.dataset.goto || '-1', 10);
+      if (!Number.isNaN(target) && target >= 0 && target < total) goTo(target);
     });
   });
+
+  setActiveDot(current);
+  startTimer();
 })();
 
 // Mobile menu
@@ -2937,18 +2799,18 @@ document.querySelectorAll('.metrics').forEach(el => chartObserver.observe(el));
 
 // Populate Our Team grid (12 specialists from Femme Nest Hospital)
 const doctors = [
-  { name: 'Dr. Sowjanya Aggarwal', spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Sat - By Appointment',          img: 'images/fn/dr-sowjanya-aggarwal.webp' },
-  { name: 'Dr. Anita Aggarwal',    spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Thu & Sat - 4:00 - 6:00 PM',    img: 'images/fn/dr-anita-aggarwal.webp' },
-  { name: 'Dr. Anita Jain',        spec: 'Obstetrician & Gynaecologist', opd: 'Monday - 1:00 - 3:00 PM',             img: 'images/fn/dr-anita-jain.webp' },
-  { name: 'Dr. Apoorva Reddy',     spec: 'Obstetrician & Gynaecologist', opd: 'Tue - Sat - 10:00 AM - 12:00 PM',     img: 'images/fn/dr-apoorva-reddy.webp' },
-  { name: 'Dr. Dipti Nabh',        spec: 'Obstetrician & Gynaecologist', opd: 'Mon / Wed / Fri - 6:00 - 7:00 PM',    img: 'images/fn/dr-dipti-nabh.webp' },
-  { name: 'Dr. Pooja Prasad',      spec: 'Obstetrician & Gynaecologist', opd: 'Mon & Thu - 9:00 - 11:00 AM',         img: 'images/fn/dr-pooja-prasad.webp' },
-  { name: 'Dr. Ragini Gupta',      spec: 'Obstetrician & Gynaecologist', opd: 'Tue / Thu / Sat - 11:00 AM - 1:00 PM',img: 'images/fn/dr-ragini-gupta.webp' },
-  { name: 'Dr. Rakhi Rawat',       spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Sat - 11:00 AM - 1:00 PM',      img: 'images/fn/dr-rakhi-rawat.webp' },
-  { name: 'Dr. Reena Mehra',       spec: 'Obstetrician & Gynaecologist', opd: 'Mon / Wed / Fri - 11:00 AM - 1:00 PM',img: 'images/fn/dr-reena-mehra.webp' },
-  { name: 'Dr. Rekha Sarin',       spec: 'Obstetrician & Gynaecologist', opd: 'Tue / Thu / Sat - 6:00 - 8:00 PM',    img: 'images/fn/dr-rekha-sarin.webp' },
-  { name: 'Dr. Rupali Gupta',      spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Sat - 3:00 - 5:00 PM',          img: 'images/fn/dr-rupali-gupta.webp' },
-  { name: 'Dr. Sangeeta Goel',     spec: 'Obstetrician & Gynaecologist', opd: 'Tue - Sat - 9:00 - 11:00 AM',         img: 'images/fn/dr-sangeeta-goel.webp' },
+  { slug: 'dr-sowjanya-aggarwal', name: 'Dr. Sowjanya Aggarwal', spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Sat - By Appointment',          img: 'images/fn/dr-sowjanya-aggarwal.webp' },
+  { slug: 'dr-anita-aggarwal', name: 'Dr. Anita Aggarwal',    spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Thu & Sat - 4:00 - 6:00 PM',    img: 'images/fn/dr-anita-aggarwal.webp' },
+  { slug: 'dr-anita-jain', name: 'Dr. Anita Jain',        spec: 'Obstetrician & Gynaecologist', opd: 'Monday - 1:00 - 3:00 PM',             img: 'images/fn/dr-anita-jain.webp' },
+  { slug: 'dr-apoorva-reddy', name: 'Dr. Apoorva Reddy',     spec: 'Obstetrician & Gynaecologist', opd: 'Tue - Sat - 10:00 AM - 12:00 PM',     img: 'images/fn/dr-apoorva-reddy.webp' },
+  { slug: 'dr-dipti-nabh', name: 'Dr. Dipti Nabh',        spec: 'Obstetrician & Gynaecologist', opd: 'Mon / Wed / Fri - 6:00 - 7:00 PM',    img: 'images/fn/dr-dipti-nabh.webp' },
+  { slug: 'dr-pooja-prasad', name: 'Dr. Pooja Prasad',      spec: 'Obstetrician & Gynaecologist', opd: 'Mon & Thu - 9:00 - 11:00 AM',         img: 'images/fn/dr-pooja-prasad.webp' },
+  { slug: 'dr-ragini-gupta', name: 'Dr. Ragini Gupta',      spec: 'Obstetrician & Gynaecologist', opd: 'Tue / Thu / Sat - 11:00 AM - 1:00 PM',img: 'images/fn/dr-ragini-gupta.webp' },
+  { slug: 'dr-rakhi-rawat', name: 'Dr. Rakhi Rawat',       spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Sat - 11:00 AM - 1:00 PM',      img: 'images/fn/dr-rakhi-rawat.webp' },
+  { slug: 'dr-reena-mehra', name: 'Dr. Reena Mehra',       spec: 'Obstetrician & Gynaecologist', opd: 'Mon / Wed / Fri - 11:00 AM - 1:00 PM',img: 'images/fn/dr-reena-mehra.webp' },
+  { slug: 'dr-rekha-sarin', name: 'Dr. Rekha Sarin',       spec: 'Obstetrician & Gynaecologist', opd: 'Tue / Thu / Sat - 6:00 - 8:00 PM',    img: 'images/fn/dr-rekha-sarin.webp' },
+  { slug: 'dr-rupali-gupta', name: 'Dr. Rupali Gupta',      spec: 'Obstetrician & Gynaecologist', opd: 'Mon - Sat - 3:00 - 5:00 PM',          img: 'images/fn/dr-rupali-gupta.webp' },
+  { slug: 'dr-sangeeta-goel', name: 'Dr. Sangeeta Goel',     spec: 'Obstetrician & Gynaecologist', opd: 'Tue - Sat - 9:00 - 11:00 AM',         img: 'images/fn/dr-sangeeta-goel.webp' },
 ];
 const star = '<svg viewBox="0 0 24 24" fill="#F2D88F"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
 function getAstroScopeAttr(el: Element | null): string {
@@ -2981,7 +2843,7 @@ function doctorCard(d: any, idx: number, hidden: boolean = false): string {
     <div class="doctor-spec">${d.spec}</div>
     <div class="doctor-stars">${star.repeat(5)}</div>
     <div class="doctor-timing">${d.opd}</div>
-    <a href="doctor.html?id=${idx}" class="doctor-learn-more">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <a href="/doctors/${d.slug}" class="doctor-learn-more">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>`;
 }
 const grid = document.getElementById('doctorsGrid');
@@ -3056,7 +2918,7 @@ const testimonials = [
   },
   {
     name: 'Meenal Chopra',
-    detail: 'Gynaecology, 2024',
+    detail: 'Gynecology, 2024',
     initial: 'M',
     color: 'B4B534',
     text: "I consulted Dr. Sowjanya for a long-standing issue that other doctors had dismissed. She listened carefully, explained everything in detail and created a treatment plan that actually worked. I feel like a different person now."
@@ -3138,7 +3000,6 @@ if (tGrid) {
 // Carousel arrow controls â€” smoothly tween the underlying CSS animation's currentTime
 (function(){
   const targets = {
-    journey: { el: document.querySelector('.journey-steps'), step: 5000, tweening: false },
     doctors: { el: document.querySelector('.doctors-grid'), step: 6000, tweening: false },
     testimonials: { el: document.querySelector('.testimonials-grid'), step: 7000, tweening: false }
   };
@@ -3190,6 +3051,23 @@ if (tGrid) {
     });
   });
 })();
+
+// Gallery slider
+let galIdx = 0;
+const galSlider = document.getElementById('wcuSlider');
+const galCounter = document.getElementById('galCounter');
+const galImages = galSlider ? galSlider.querySelectorAll('img') : null;
+
+const galSlide = (dir: number) => {
+  if (!galCounter || !galImages || galImages.length === 0) return;
+  galImages[galIdx].classList.remove('gal-active');
+  galIdx = (galIdx + dir + galImages.length) % galImages.length;
+  galImages[galIdx].classList.add('gal-active');
+  galCounter.textContent = `${galIdx + 1} / ${galImages.length}`;
+};
+
+// Inline onclick handlers require a global function in Astro's module-scoped scripts.
+(window as typeof window & { galSlide: (dir: number) => void }).galSlide = galSlide;
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(a => {

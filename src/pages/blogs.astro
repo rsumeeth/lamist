@@ -1,0 +1,266 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import HeroNav from '../components/HeroNav.astro';
+
+const blogPosts = [
+  {
+    tag: 'Pregnancy',
+    title: 'A Gentle Guide to Your First Trimester',
+    excerpt: 'What to expect, what to eat, and how to take care of yourself during those important first twelve weeks of pregnancy.',
+    image: '/images/fn/blog-pregnancy.jpg',
+    alt: 'Pregnancy care',
+    readTime: '5 min read',
+  },
+  {
+    tag: "Women's Health",
+    title: 'Understanding PCOS: Symptoms & Care',
+    excerpt: 'PCOS affects many Indian women. Our specialists explain the signs, management options, and when to seek help.',
+    image: '/images/fn/blog-pcos.jpg',
+    alt: "Women's health",
+    readTime: '7 min read',
+  },
+  {
+    tag: 'Postnatal',
+    title: 'Your First Month with a Newborn',
+    excerpt: 'From sleep schedules to breastfeeding basics, our pediatricians share practical guidance for new moms.',
+    image: '/images/fn/blog-postnatal.jpg',
+    alt: 'Postnatal care',
+    readTime: '6 min read',
+  },
+  {
+    tag: 'Fetal Medicine',
+    title: 'Why the 20-Week Anomaly Scan Matters',
+    excerpt: "The Level-II scan is one of the most important checkpoints in pregnancy. Here's what your doctor looks for and why.",
+    image: '/images/fn/blog-ultrasound.jpg',
+    alt: 'Fetal medicine ultrasound',
+    readTime: '4 min read',
+  },
+  {
+    tag: 'Fertility',
+    title: 'IVF in India: Myths vs. Facts',
+    excerpt: 'We bust common misconceptions about IVF and explain what a modern fertility journey actually looks like.',
+    image: '/images/fn/blog-ivf.jpg',
+    alt: 'IVF care',
+    readTime: '8 min read',
+  },
+  {
+    tag: 'Neonatal',
+    title: 'Inside a Level-III NICU',
+    excerpt: 'A behind-the-scenes look at how neonatologists care for the tiniest patients around the clock.',
+    image: '/images/fn/blog-nicu.jpg',
+    alt: 'NICU care',
+    readTime: '6 min read',
+  },
+  {
+    tag: 'Wellness',
+    title: 'Nutrition Through Every Trimester',
+    excerpt: 'A month-by-month eating guide designed for expecting Indian mothers.',
+    image: '/images/fn/blog-nutrition.jpg',
+    alt: 'Pregnancy nutrition',
+    readTime: '5 min read',
+  },
+  {
+    tag: 'Mental Health',
+    title: "Postpartum Emotions: You're Not Alone",
+    excerpt: 'Recognizing the signs of postpartum blues versus depression and how our team can help.',
+    image: '/images/fn/blog-emotions.jpg',
+    alt: 'Emotional wellness support',
+    readTime: '6 min read',
+  },
+  {
+    tag: 'Planning',
+    title: 'Preconception Care: Before You Try',
+    excerpt: 'A simple checklist of health checks, vitamins, and lifestyle tweaks to prepare your body for pregnancy.',
+    image: '/images/fn/blog-planning.jpg',
+    alt: 'Family planning consultation',
+    readTime: '5 min read',
+  },
+];
+---
+
+<MainLayout
+  title="Blogs | Femme Nest Journal"
+  description="Read expert insights from Femme Nest specialists on pregnancy, women's health, fertility, postnatal care, and newborn support."
+  canonical="https://www.femmenest.com/blogs"
+  ogImage="/images/fn/blog-pregnancy.jpg"
+>
+  <HeroNav />
+  <main>
+    <section class="blog-hero">
+      <img src="/images/fn/blog-pregnancy.jpg" alt="Femme Nest Hospital blog" />
+      <div class="blog-hero-content">
+        <span class="section-tag section-tag-light">Femme Nest Journal</span>
+        <h1>Stories, Science &amp; Support</h1>
+        <p>
+          Expert insights from our specialists on pregnancy, women's health, parenting, and everything in between.
+        </p>
+      </div>
+    </section>
+
+    <section class="blog-grid" aria-label="Blog cards">
+      {blogPosts.map((post) => (
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <img src={post.image} alt={post.alt} loading="lazy" />
+          </div>
+          <div class="blog-body">
+            <span class="blog-tag">{post.tag}</span>
+            <h2 class="blog-title">{post.title}</h2>
+            <p class="blog-excerpt">{post.excerpt}</p>
+            <div class="blog-meta">
+              <span>{post.readTime}</span>
+              <a href="/contact#contact-form" class="blog-read">Read More</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </section>
+  </main>
+</MainLayout>
+
+<style>
+  .blog-hero {
+    position: relative;
+    height: clamp(340px, 52vw, 440px);
+    margin-top: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blog-hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blog-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.66), rgba(232, 76, 138, 0.46));
+  }
+
+  .blog-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    max-width: 860px;
+    padding: 0 clamp(20px, 4vw, 46px);
+  }
+
+  .section-tag-light {
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 0.36rem 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  .blog-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.7rem);
+    font-weight: 500;
+    line-height: 1.1;
+  }
+
+  .blog-hero p {
+    margin: 0.9rem auto 0;
+    max-width: 690px;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: 1.04rem;
+  }
+
+  .blog-grid {
+    max-width: 1200px;
+    margin: clamp(40px, 6vw, 70px) auto clamp(56px, 8vw, 90px);
+    padding: 0 clamp(18px, 4vw, 42px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: clamp(16px, 2vw, 28px);
+  }
+
+  .blog-card {
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(45, 31, 26, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .blog-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blog-body {
+    padding: 1.5rem 1.4rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .blog-tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0.32rem 0.82rem;
+    background: rgba(232, 76, 138, 0.1);
+    color: var(--rose-gold);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    line-height: 1.28;
+    margin-bottom: 0.65rem;
+    color: var(--midnight);
+  }
+
+  .blog-excerpt {
+    color: var(--charcoal);
+    font-size: 0.96rem;
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+
+  .blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(26, 26, 46, 0.08);
+    padding-top: 0.9rem;
+    font-size: 0.84rem;
+    color: #816f68;
+  }
+
+  .blog-read {
+    color: var(--rose-gold);
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .blog-hero {
+      margin-top: 92px;
+    }
+  }
+</style>

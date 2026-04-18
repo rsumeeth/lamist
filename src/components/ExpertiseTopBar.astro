@@ -1,0 +1,37 @@
+---
+interface Props {
+  currentLabel: string;
+}
+
+const { currentLabel } = Astro.props;
+---
+
+<nav class="ex-nav" aria-label="Expertise page navigation">
+  <div class="ex-nav-inner">
+    <a href="/" class="ex-nav-logo" aria-label="Femme Nest Home">
+      <img src="/images/logo-hospital-cropped.png" alt="Femme Nest Hospital" />
+    </a>
+
+    <div class="ex-nav-right">
+      <nav class="ex-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/#specialties">Services</a>
+        <span aria-hidden="true">/</span>
+        <span class="active" aria-current="page">{currentLabel}</span>
+      </nav>
+
+      <a href="/#specialties" class="ex-nav-back-card">
+        <span class="ex-back-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6"></path>
+          </svg>
+        </span>
+        <span class="ex-back-copy">
+          <span class="ex-back-title">Back to Services</span>
+          <span class="ex-back-subtitle">Explore all specialties and care programs</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</nav>

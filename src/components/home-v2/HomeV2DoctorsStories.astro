@@ -14,6 +14,7 @@ import { homeV2Doctors, homeV2Stories } from '../../data/homepageV2Content';
             <h3>{doctor.name}</h3>
             <p class="doctor-role">{doctor.specialty}</p>
             <p class="doctor-time">{doctor.schedule}</p>
+            <a class="doctor-link" href={`/doctors/${doctor.slug}`}>Learn More</a>
           </div>
         </article>
       ))}
@@ -76,6 +77,14 @@ import { homeV2Doctors, homeV2Stories } from '../../data/homepageV2Content';
   .doctor-time {
     color: #6a6371;
     font-size: 0.8rem;
+  }
+
+  .doctor-link {
+    display: inline-flex;
+    margin-top: 8px;
+    color: #e36888;
+    font-size: 0.82rem;
+    font-weight: 600;
   }
 
   .home-v2-stories {

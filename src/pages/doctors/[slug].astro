@@ -1,0 +1,436 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import HeroNav from '../../components/HeroNav.astro';
+import { doctorDetailDefaults, doctors, hospitalPhone, phoneToTelHref } from '../../data/doctorsContent';
+
+export function getStaticPaths() {
+  return doctors.map((doctor) => ({
+    params: { slug: doctor.slug },
+    props: { doctor },
+  }));
+}
+
+const { doctor } = Astro.props;
+
+const about = doctor.about ?? doctorDetailDefaults.about;
+const expertise = doctor.expertise ?? doctorDetailDefaults.expertise;
+const qualifications = doctor.qualifications ?? doctorDetailDefaults.qualifications;
+const bookingDoctor = `${doctor.name} - ${doctor.specialty}`;
+const callNowHref = phoneToTelHref(doctor.phone ?? hospitalPhone);
+---
+
+<MainLayout
+  title={`${doctor.name} | Femme Nest Hospital`}
+  description={`${doctor.name} (${doctor.specialty}) at Femme Nest Hospital. View profile, OPD schedule, expertise, and book an appointment.`}
+  canonical={`https://www.femmenest.com/doctors/${doctor.slug}`}
+  ogImage={doctor.image}
+  showFooter={false}
+  showConversionAssist={false}
+>
+  <div class="doctor-detail-page">
+    <HeroNav theme="about" />
+
+    <main class="doc-wrap">
+      <section class="doc-top">
+        <div class="doc-photo">
+          <img src={doctor.image} alt={doctor.name} loading="eager" />
+        </div>
+
+        <div>
+          <span class="doc-label">Our Specialist</span>
+          <h1 class="doc-name">{doctor.name}</h1>
+          <div class="doc-spec">{doctor.specialty}</div>
+          <div class="doc-stars" aria-label="5 star doctor profile">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          {doctor.schedule && (
+            <div class="doc-opd">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <span>OPD: {doctor.schedule}</span>
+            </div>
+          )}
+          <div class="doc-actions">
+            <a href="#bookingForm" class="doc-btn">Book Appointment</a>
+            <a href={callNowHref} class="doc-btn ghost">Call Now</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="doc-section">
+        <h2>About the Doctor</h2>
+        <p>{about}</p>
+      </section>
+
+      <section class="doc-grid2">
+        <article class="doc-section">
+          <h2>Areas of Expertise</h2>
+          <ul class="doc-list">
+            {expertise.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </article>
+
+        <article class="doc-section">
+          <h2>Qualifications</h2>
+          <ul class="doc-list">
+            <li>{doctor.degree}</li>
+            {qualifications.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
+      <section class="doc-section doc-booking" id="bookingForm">
+        <h2>Book an Appointment</h2>
+        <p class="doc-booking-note">Fill in the details below and our team will confirm your appointment shortly.</p>
+        <form class="doc-form" id="doctorBookingForm">
+          <div class="doc-form-group">
+            <label>Booking Appointment With</label>
+            <input type="text" value={bookingDoctor} readonly class="doc-booking-readonly" />
+          </div>
+          <div class="doc-form-row">
+            <div class="doc-form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your name" required />
+            </div>
+            <div class="doc-form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91 98XXX XXXXX" required />
+            </div>
+          </div>
+          <div class="doc-form-row">
+            <div class="doc-form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" />
+            </div>
+            <div class="doc-form-group">
+              <label>Preferred Date</label>
+              <input type="date" required />
+            </div>
+          </div>
+          <div class="doc-form-group">
+            <label>Message (Optional)</label>
+            <textarea rows="3" placeholder="Briefly describe your concern..."></textarea>
+          </div>
+          <button type="submit" class="doc-form-submit">Book Appointment &rarr;</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="ex-foot">&copy; Femme Nest Hospital &middot; Boutique Hospital for Women &amp; Child Care</footer>
+  </div>
+</MainLayout>
+
+<script>
+  const bookingForm = document.getElementById('doctorBookingForm');
+  bookingForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    bookingForm.innerHTML =
+      '<p style="text-align:center;padding:2rem;color:#E36888;font-weight:600;font-size:1.15rem;">Thank you! We will contact you shortly to confirm your appointment.</p>';
+  });
+</script>
+
+<style is:global>
+  .doctor-detail-page {
+    --blush: #e36888;
+    --soft-cream: #fdf8f4;
+    --deep-text: #2d1f1a;
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Inter', sans-serif;
+    background: var(--soft-cream);
+  }
+
+  .doc-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12rem 2rem 4rem;
+  }
+
+  .doc-top {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+  }
+
+  .doc-photo {
+    width: 320px;
+    height: 380px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(227, 104, 136, 0.18);
+    background: linear-gradient(135deg, #fce4eb, #fff);
+  }
+
+  .doc-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .doc-label {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(227, 104, 136, 0.1);
+    color: var(--blush);
+    border-radius: 999px;
+    font-family: var(--font-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .doc-name {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 4.8vw, 3rem);
+    font-weight: 700;
+    color: var(--deep-text);
+    margin: 0 0 0.5rem;
+    line-height: 1.1;
+  }
+
+  .doc-spec {
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    color: #8b6f65;
+    margin-bottom: 1.25rem;
+  }
+
+  .doc-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 1.25rem;
+  }
+
+  .doc-stars svg {
+    width: 22px;
+    height: 22px;
+    fill: #f2d88f;
+  }
+
+  .doc-opd {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.4rem;
+    background: #fff;
+    border: 1px solid rgba(45, 31, 26, 0.08);
+    border-radius: 14px;
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    color: var(--deep-text);
+    margin-bottom: 1.75rem;
+  }
+
+  .doc-opd svg {
+    color: var(--blush);
+  }
+
+  .doc-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.8rem;
+    border-radius: 999px;
+    background: var(--blush);
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .doc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(227, 104, 136, 0.3);
+  }
+
+  .doc-btn.ghost {
+    background: #fff;
+    color: var(--deep-text);
+    border: 1px solid rgba(45, 31, 26, 0.1);
+  }
+
+  .doc-section {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 20px 50px rgba(45, 31, 26, 0.06);
+  }
+
+  .doc-section h2 {
+    font-family: var(--font-primary);
+    font-size: 1.75rem;
+    color: var(--deep-text);
+    margin: 0 0 1rem;
+  }
+
+  .doc-section p {
+    font-family: var(--font-secondary);
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #4a3832;
+    margin: 0;
+  }
+
+  .doc-grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .doc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .doc-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(45, 31, 26, 0.08);
+    font-family: var(--font-secondary);
+    color: #4a3832;
+    display: flex;
+    gap: 0.75rem;
+    line-height: 1.55;
+  }
+
+  .doc-list li:last-child {
+    border-bottom: none;
+  }
+
+  .doc-list li::before {
+    content: '\2713';
+    color: var(--blush);
+    font-weight: 700;
+  }
+
+  .doc-booking {
+    background: linear-gradient(135deg, #fff5f7, #fff9f2);
+    border-radius: 28px;
+  }
+
+  .doc-booking-note {
+    font-family: var(--font-secondary);
+    color: #6b5a52;
+    margin-bottom: 1.5rem;
+  }
+
+  .doc-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .doc-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .doc-form-group label {
+    font-family: var(--font-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2d1f1a;
+  }
+
+  .doc-form-group input,
+  .doc-form-group textarea {
+    font-family: var(--font-secondary);
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid rgba(45, 31, 26, 0.12);
+    border-radius: 12px;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.25s;
+  }
+
+  .doc-form-group input:focus,
+  .doc-form-group textarea:focus {
+    border-color: #e36888;
+  }
+
+  .doc-form-group textarea {
+    resize: vertical;
+  }
+
+  .doc-booking-readonly {
+    background: #f8f0ee !important;
+    font-weight: 600;
+    color: #2d1f1a;
+    cursor: default;
+  }
+
+  .doc-form-submit {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 2rem;
+    background: linear-gradient(135deg, #e36888, #f08c21);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    margin-top: 0.5rem;
+  }
+
+  .doc-form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(227, 104, 136, 0.35);
+  }
+
+  .doctor-detail-page .ex-foot {
+    text-align: center;
+    padding: 2rem;
+    color: #6b5a54;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(45, 31, 26, 0.08);
+  }
+
+  @media (max-width: 900px) {
+    .doc-top {
+      grid-template-columns: 1fr;
+    }
+
+    .doc-photo {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .doc-grid2 {
+      grid-template-columns: 1fr;
+    }
+
+    .doc-form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

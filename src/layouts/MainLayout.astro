@@ -12,6 +12,8 @@ export interface Props {
   siteName?: string;
   schemas?: Record<string, unknown>[];
   preloadImages?: { href: string; type?: string }[];
+  showFooter?: boolean;
+  showConversionAssist?: boolean;
 }
 
 const {
@@ -23,6 +25,8 @@ const {
   siteName = 'Femme Nest Hospital',
   schemas = [],
   preloadImages = [],
+  showFooter = true,
+  showConversionAssist = true,
 } = Astro.props;
 
 const localBusinessSchema: Record<string, unknown> = {
@@ -101,6 +105,10 @@ const mergedSchemas = [localBusinessSchema, ...schemas];
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap"
     rel="stylesheet"
   />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   {mergedSchemas.map((schema) => (
@@ -109,8 +117,8 @@ const mergedSchemas = [localBusinessSchema, ...schemas];
 </head>
 <body>
   <slot />
-  <ConversionAssist />
-  <Footer />
+  {showConversionAssist && <ConversionAssist />}
+  {showFooter && <Footer />}
 
   <script>
     const revealEls = document.querySelectorAll('.reveal');

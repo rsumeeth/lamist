@@ -1,3 +1,5 @@
+import { homeFeaturedDoctors } from './doctorsContent';
+
 export type HomeStat = {
   value: string;
   label: string;
@@ -11,6 +13,7 @@ export type HomeService = {
 };
 
 export type HomeDoctor = {
+  slug: string;
   name: string;
   specialty: string;
   schedule: string;
@@ -73,30 +76,13 @@ export const homeV2Services: HomeService[] = [
 ];
 
 export const homeV2Doctors: HomeDoctor[] = [
-  {
-    name: 'Dr. Sowjanya Aggarwal',
-    specialty: 'Obstetrician and Gynecologist',
-    schedule: 'Mon to Sat | By Appointment',
-    image: '/images/fn/dr-sowjanya-aggarwal.webp',
-  },
-  {
-    name: 'Dr. Anita Aggarwal',
-    specialty: 'Senior Obstetrician and Gynecologist',
-    schedule: 'Mon, Wed, Fri | 4:00 PM to 6:00 PM',
-    image: '/images/fn/dr-anita-aggarwal.webp',
-  },
-  {
-    name: 'Dr. Apoorva Reddy',
-    specialty: 'Obstetrician and Gynecologist',
-    schedule: 'Tue to Sat | 10:00 AM to 12:00 PM',
-    image: '/images/fn/dr-apoorva-reddy.webp',
-  },
-  {
-    name: 'Dr. Rakhi Rawat',
-    specialty: 'Obstetrician and Gynecologist',
-    schedule: 'Mon to Sat | 11:00 AM to 1:00 PM',
-    image: '/images/fn/dr-rakhi-rawat.webp',
-  },
+  ...homeFeaturedDoctors.map((doctor) => ({
+    slug: doctor.slug,
+    name: doctor.name,
+    specialty: doctor.specialty.replace('&', 'and'),
+    schedule: doctor.schedule ?? 'By Appointment',
+    image: doctor.image,
+  })),
 ];
 
 export const homeV2Stories: HomeStory[] = [
